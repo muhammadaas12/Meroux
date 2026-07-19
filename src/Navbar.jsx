@@ -23,7 +23,7 @@ export default function Navbar() {
         <Link to="/" className="flex items-center">
           <img src={logoImg} alt="Company Logo" className="h-10 mr-3" />
           <span className="text-lg font-normal text-white">
-            Meroux
+            Meroux Limited
           </span>
         </Link>
 
