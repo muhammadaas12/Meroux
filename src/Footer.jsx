@@ -31,9 +31,9 @@ export default function Footer() {
                 {/* Social Links */}
                 <div className="flex items-center gap-5">
                     {[
-                        { name: "Facebook", icon: "fa-brands fa-facebook", link: "https://www.facebook.com/imperiumdevelopments" },
+                
                         { name: "Instagram", icon: "fa-brands fa-instagram", link: "https://www.instagram.com/merouxlimited?igsh=MWxmbnFmZzRhZThlbA==" },
-                        { name: "LinkedIn", icon: "fa-brands fa-linkedin", link: "https://www.linkedin.com/company/imperiumdevelopments" },
+                 
                     ].map((item, index) => (
                         <a
                             key={index}
