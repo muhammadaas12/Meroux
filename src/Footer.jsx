@@ -24,7 +24,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
                 {/* Copyright */}
                 <p className="text-xs text-white/60">
-                    &copy; 2026 <span className="font-semibold text-white/80">Meroux Ltd.</span>.
+                    &copy; 2026 <span className="font-semibold text-white/80">Meroux Ltd</span>.
                     <span className="hidden xs:inline"> All rights reserved.</span>
                 </p>
 
