@@ -71,7 +71,7 @@ const Contact = () => {
 
     <p>
       <strong>Email:</strong><br />
-      office@meroux.co.uk
+      info@meroux.co.uk
     </p>
 
     <p>
