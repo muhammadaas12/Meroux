@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../src/css/contact.css'; // Ensure you have a CSS file for styling
+import '../src/css/contact.css' // Ensure you have a CSS file for styling
 import Map from './Map'; // your existing Map component (must accept className etc.)
 
 const Contact = () => {
