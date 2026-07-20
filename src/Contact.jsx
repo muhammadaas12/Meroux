@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './css/Contact.css';
-import Map from './Map';
+import '../src/css/contact.css'; // Ensure you have a CSS file for styling
+import Map from './Map'; // your existing Map component (must accept className etc.)
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,36 +26,33 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    const response = await fetch(
-      "https://meroux-backend.onrender.com/send-contact",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+    try {
+      const response = await fetch(
+        "https://meroux-backend.onrender.com/send-contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send message");
       }
-    );
 
-    const result = await response.json();
-
-    if (!response.ok) {
-      throw new Error(result.error || "Failed to send message");
+      alert("Message sent successfully!");
+      window.location.reload();
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong!");
     }
-
-    alert("Message sent successfully!");
-
-    // Reload page after success
-    window.location.reload();
-
-  } catch (error) {
-    console.error(error);
-    alert("Something went wrong!");
-  }
-};
+  };
 
   return (
     <div className="contact-page">
@@ -63,36 +60,42 @@ const Contact = () => {
         <h2>Contact Us</h2>
 
         <div className="side-by-side">
-<div className="map-area">
-  <Map />
+          {/* Map Area */}
+          <div className="map-area">
+            <div className="map-wrapper">
+              <Map /> {/* your Map component – ensure it renders an iframe or similar */}
+            </div>
 
-  <div className="contact-info">
-    <h3>Get In Touch</h3>
+            <div className="contact-info">
+              <h3>Get In Touch</h3>
 
-    <p>
-      <strong>Email:</strong><br />
-      info@meroux.co.uk
-    </p>
+              <div className="info-item">
+                <span className="label">Email</span>
+                <span className="value">
+                  <a href="mailto:info@meroux.co.uk">info@meroux.co.uk</a>
+                </span>
+              </div>
 
-    <p>
-      <strong>Phone:</strong><br />
-                <a href="tel:+447702180129" className="text-sm text-gray-600 hover:text-gray-800">
-              +44 7702180129
-            </a>
-    </p>
+              <div className="info-item">
+                <span className="label">Phone</span>
+                <span className="value">
+                  <a href="tel:+447702180129">+44 7702 180129</a>
+                </span>
+              </div>
 
-    <p>
-      <strong>Address:</strong><br />
-      42 Star Road, Isleworth ,TW7 4HB
-    </p>
+              <div className="info-item full">
+                <span className="label">Address</span>
+                <span className="value">42 Star Road, Isleworth, TW7 4HB</span>
+              </div>
 
-    <p>
-      <strong>Business Hours:</strong><br />
-      Mon - Fri: 9:00 AM - 5:00 PM
-    </p>
-  </div>
-</div>
+              <div className="info-item full">
+                <span className="label">Business Hours</span>
+                <span className="value">Mon – Fri: 9:00 AM – 5:00 PM</span>
+              </div>
+            </div>
+          </div>
 
+          {/* Form Area */}
           <div className="form-area">
             <form onSubmit={handleSubmit}>
               <div className="form-row">
@@ -100,21 +103,23 @@ const Contact = () => {
                   <input
                     type="text"
                     name="name"
+                    id="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
                   />
-                  <label>Name</label>
+                  <label htmlFor="name">Name</label>
                 </div>
                 <div className={`input-group ${hasContent.occupation ? 'has-content' : ''}`}>
                   <input
                     type="text"
                     name="occupation"
+                    id="occupation"
                     value={formData.occupation}
                     onChange={handleChange}
                     required
                   />
-                  <label>Business/Occupation</label>
+                  <label htmlFor="occupation">Business / Occupation</label>
                 </div>
               </div>
 
@@ -123,35 +128,37 @@ const Contact = () => {
                   <input
                     type="email"
                     name="email"
+                    id="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
                   />
-                  <label>Email Address</label>
+                  <label htmlFor="email">Email Address</label>
                 </div>
                 <div className={`input-group ${hasContent.phone ? 'has-content' : ''}`}>
                   <input
                     type="tel"
                     name="phone"
+                    id="phone"
                     value={formData.phone}
                     onChange={handleChange}
                     required
                   />
-                  <label>Phone Number</label>
+                  <label htmlFor="phone">Phone Number</label>
                 </div>
               </div>
 
-              {/* Message field: textarea with no resize handle */}
               <div className="form-row">
-                <div className={`input-group textarea-group ${hasContent.message ? 'has-content' : ''}`}>
+                <div className={`input-group textarea-group ${hasContent.quote ? 'has-content' : ''}`}>
                   <textarea
                     rows="5"
                     name="quote"
+                    id="quote"
                     value={formData.quote}
                     onChange={handleChange}
                     required
                   />
-                  <label>Your Message</label>
+                  <label htmlFor="quote">Your Message</label>
                 </div>
               </div>
 
