@@ -88,7 +88,7 @@ const handleSubmit = async (e) => {
         <div className="quote-text">Instant Quote Generator</div>
 
 <p className="quote-description">
-  Complete the form below to receive an intelligent, personalized project estimate. Our AI analyzes your project details, property information, budget, timeline, and uploaded plans or photos to generate a fast and accurate preliminary quotation. The more information you provide, the more precise your estimate will be before our team reviews and finalizes it.
+  Complete the form below to receive an intelligent, personalized project estimate. Our AI analyzes your project details, property information, budget, timeline, and uploaded plans or photos to generate a fast and accurate preliminary quotation.
 </p>
 
         <form className="quote-form" onSubmit={handleSubmit}>

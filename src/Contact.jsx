@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './css/Contact.css' // Ensure you have a CSS file for styling
-import Map from './Map'; // your existing Map component (must accept className etc.)
+import './css/Contact.css' 
+import Map from './Map'; 
 
 const Contact = () => {
   const [formData, setFormData] = useState({
