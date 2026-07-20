@@ -29,7 +29,6 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-
 }
 
 .contact-card {
@@ -520,14 +519,9 @@
   }
 }
 
-/* Accessibility */
+/* ===== Accessibility – focus outlines removed (no border over inputs) ===== */
 .input-group input:focus-visible,
-.input-group textarea:focus-visible {
-  outline: 2px solid var(--gold-main);
-  outline-offset: 2px;
-  border-radius: 2px;
-}
+.input-group textarea:focus-visible,
 .submit-btn:focus-visible {
-  outline: 3px solid var(--gold-dark);
-  outline-offset: 2px;
+  outline: none;
 }
