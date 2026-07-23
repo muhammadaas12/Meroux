@@ -563,10 +563,9 @@ const handleSubmit = async (e) => {
             </div>
           </div>
 
-          {/* ========== CONDITIONAL AREA SECTIONS ========== */}
-          {/* Each section appears only if the corresponding checkbox is selected */}
 
-          {/* KITCHEN */}
+
+        
           {selectedAreas.kitchen && (
             <>
               <h3>Kitchen Details</h3>
@@ -593,7 +592,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* BATHROOM */}
+          
           {selectedAreas.bathroom && (
             <>
               <h3>Bathroom Details</h3>
@@ -618,7 +617,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* LIVING ROOM */}
+
           {selectedAreas.livingRoom && (
             <>
               <h3>Living Room / Family Room Details</h3>
@@ -640,7 +639,6 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* BEDROOM */}
           {selectedAreas.bedroom && (
             <>
               <h3>Bedroom Details</h3>
@@ -660,7 +658,6 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* DINING ROOM */}
           {selectedAreas.diningRoom && (
             <>
               <h3>Dining Room Details</h3>
@@ -676,7 +673,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* BASEMENT */}
+  
           {selectedAreas.basement && (
             <>
               <h3>Basement / Cellar Details</h3>
@@ -694,7 +691,6 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* ATTIC / LOFT */}
           {selectedAreas.attic && (
             <>
               <h3>Attic / Loft Details</h3>
@@ -710,7 +706,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* ROOF / GUTTERS */}
+
           {selectedAreas.roof && (
             <>
               <h3>Roof & Gutters Details</h3>
@@ -726,7 +722,6 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* EXTERIOR SIDING / PAINT */}
           {selectedAreas.exterior && (
             <>
               <h3>Exterior Siding / Paint Details</h3>
@@ -740,7 +735,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* WINDOWS & DOORS */}
+
           {selectedAreas.windowsDoors && (
             <>
               <h3>Windows & Doors Details</h3>
@@ -755,7 +750,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* DECK / PATIO */}
+     
           {selectedAreas.deckPatio && (
             <>
               <h3>Deck / Patio Details</h3>
@@ -771,7 +766,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* GARDEN / LANDSCAPING */}
+
           {selectedAreas.garden && (
             <>
               <h3>Garden / Landscaping Details</h3>
@@ -787,7 +782,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* DRIVEWAY / WALKWAY */}
+ 
           {selectedAreas.driveway && (
             <>
               <h3>Driveway / Walkway Details</h3>
@@ -799,7 +794,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* FOUNDATION / STRUCTURAL */}
+    
           {selectedAreas.foundation && (
             <>
               <h3>Foundation / Structural Details</h3>
@@ -812,7 +807,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* HVAC / MECHANICAL */}
+       
           {selectedAreas.hvac && (
             <>
               <h3>HVAC / Mechanical Details</h3>
@@ -825,7 +820,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* ELECTRICAL / LIGHTING */}
+
           {selectedAreas.electrical && (
             <>
               <h3>Electrical / Lighting Details</h3>
@@ -839,7 +834,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* PLUMBING */}
+
           {selectedAreas.plumbing && (
             <>
               <h3>Plumbing Details</h3>
@@ -852,7 +847,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* GARAGE */}
+      
           {selectedAreas.garage && (
             <>
               <h3>Garage Details</h3>
@@ -866,7 +861,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* POOL / SPA */}
+       
           {selectedAreas.pool && (
             <>
               <h3>Pool / Spa Details</h3>
@@ -880,7 +875,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* WHOLE‑HOUSE */}
+   
           {selectedAreas.wholeHouse && (
             <>
               <h3>Whole‑house Details</h3>
@@ -897,7 +892,6 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* OTHER */}
           {selectedAreas.other && (
             <>
               <h3>Other Area Details</h3>
@@ -909,7 +903,7 @@ const handleSubmit = async (e) => {
             </>
           )}
 
-          {/* ========== FILE UPLOADS (optional) ========== */}
+        
           <h3>Upload Documents (Optional)</h3>
           <div className="quote-form-row">
             <div className="quote-input-data"><input type="file" name="photos" /><div className="quote-underline"></div><small>Photos of current space</small></div>
@@ -920,7 +914,6 @@ const handleSubmit = async (e) => {
             <div className="quote-input-data"><input type="file" name="permitsDocs" /><div className="quote-underline"></div><small>Existing permits/survey documents</small></div>
           </div>
 
-          {/* ========== SUBMIT ========== */}
           <div className="quote-form-row quote-submit-btn centered">    
             <div className="quote-input-data full-width">
               <input type="submit" value={loading ? "Generating..." : "Submit"} disabled={loading} />
