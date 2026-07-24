@@ -20,7 +20,7 @@ export default function Footer() {
     }, []);
 
     return (
-        <footer className="w-full bg-[#0a0a0a] border-t border-white/10 py-4 px-6">
+        <footer className="w-full bg-[#0a0a0a] border-t border-white/10 py-4 px-7">
             <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
  
                 <p className="text-xs text-white/60">

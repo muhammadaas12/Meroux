@@ -65,7 +65,7 @@ import logoImg62 from "./assets/Pl4.png";
 import logoImg from "./assets/NewLogo.png";
 
 const Services = () => {
-  // ----- Service Data -----
+
   const servicesData = useMemo(
     () => [
       {
@@ -524,10 +524,16 @@ const Services = () => {
                   <h4 className="text-sm font-semibold text-gray-700 mb-2">What's Included</h4>
                   <div className="grid grid-cols-2 gap-2">
                     {selectedService.features.map((feat, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-700">
-                        <Sparkles size={14} className="text-teal-500" />
-                        <span>{feat}</span>
-                      </div>
+                     <div
+  key={idx}
+  className="flex items-center gap-2 text-sm text-[var(--text-mid)]"
+>
+  <Sparkles
+    size={14}
+    className="text-[var(--gold-main)]"
+  />
+  <span>{feat}</span>
+</div>
                     ))}
                   </div>
                 </div>
@@ -535,7 +541,7 @@ const Services = () => {
                 <div className="mt-4 flex flex-wrap items-center gap-3">
                   <Link
                     to="/quote"
-                    className="px-4 py-2 bg-teal-600 text-white rounded-lg hover:opacity-90 text-sm font-medium"
+                    className="px-4 py-2 bg-[var(--gold-main)] text-white rounded-lg hover:bg-[var(--gold-dark)] hover:shadow-lg transition-all duration-300 text-sm font-medium"
                   >
                     Get Quote
                   </Link>

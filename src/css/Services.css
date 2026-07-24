@@ -1,3 +1,18 @@
+:root {
+  --gold-dark: #B8960F;
+  --gold-main: #D4AF37;
+  --gold-light: #E8C84A;
+  --gold-pale: #FFFDD0;
+  --gold-soft: #F8E7B9;
+  --text-dark: #1E1A0E;
+  --text-mid: #3A2F1B;
+  --text-soft: #555;
+  --bg-light: #FAFAFA;
+  --border-light: #EEE;
+  --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
 .container {
     display: flex;
     flex-wrap: wrap;
