@@ -14,7 +14,7 @@ const About = () => {
 
           {/* Hero */}
           <div className="text-center mb-20">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 ">
+            <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-700">
               About Us
             </h1>
             <p className="text-gray-200 text-base md:text-lg leading-relaxed max-w-4xl mx-auto">
