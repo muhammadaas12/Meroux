@@ -85,7 +85,7 @@ const Chatbot = () => {
     setPrice(null);
 
     const data = {
-      projectType: answers.projectType || '',
+   
       area: answers.area || '',
       propertyType: answers.propertyType || '',
       budget: answers.budget || '',
