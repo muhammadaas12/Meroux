@@ -13,6 +13,7 @@ import Services from './Services.jsx';
 import Portfolio from './Portfolio.jsx';
 import Footer from './Footer.jsx';
 import ProjectDetails from './ProjectDetails.jsx';
+import PrivacyPolicy from './PrivacyPolicy.jsx';
 import Chatbot from './Chatbot';
 import Testimonials from './Testimonials.jsx';
 
@@ -31,10 +32,11 @@ createRoot(document.getElementById('root')).render(
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/project/:id" element={<ProjectDetails />} />
           <Route path='testimonials' element ={<Testimonials />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </main>
       <Footer />
-      <Chatbot /> {/* Chatbot will appear on all pages */}
+      <Chatbot /> 
     </div>
   </BrowserRouter>
 );
