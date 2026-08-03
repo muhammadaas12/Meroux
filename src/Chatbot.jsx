@@ -112,7 +112,7 @@ const Chatbot = () => {
         const conversationSummary = `
           Chat Conversation Summary
           -------------------------
-          Project Type: ${answers.projectType || 'Not specified'}
+         
           Area: ${answers.area || 'Not specified'}
           Property Type: ${answers.propertyType || 'Not specified'}
           Budget: ${answers.budget || 'Not specified'}
@@ -140,9 +140,9 @@ const Chatbot = () => {
         );
 
         if (userEmailSent && businessEmailSent) {
-          addMessage(`Thank you! Your estimate is £${Number(result.reply).toLocaleString()}. A confirmation has been sent to ${answers.email}, and we've been notified. We'll contact you soon.`, 'bot');
+          addMessage(`Thank you! Your estimate is £${Number(result.reply).toLocaleString()}. A confirmation has been sent to us, and we've been notified. We'll contact you soon.`, 'bot');
         } else if (userEmailSent && !businessEmailSent) {
-          addMessage(`Thank you! Your estimate is £${Number(result.reply).toLocaleString()}. A confirmation has been sent to ${answers.email}. (Business notification failed, but we'll still follow up.)`, 'bot');
+          addMessage(`Thank you! Your estimate is £${Number(result.reply).toLocaleString()}. A confirmation has been sent to us. (Business notification failed, but we'll still follow up.)`, 'bot');
         } else if (!userEmailSent && businessEmailSent) {
           addMessage(`Thank you! Your estimate is £${Number(result.reply).toLocaleString()}. We've been notified and will contact you. (No email was sent to you – please ensure you entered a valid address.)`, 'bot');
         } else {
