@@ -13,6 +13,7 @@ const Chatbot = () => {
   const [price, setPrice] = useState(null);
   const [errorMsg, setErrorMsg] = useState('');
   const [textInput, setTextInput] = useState('');
+  const [emailError, setEmailError] = useState(''); // NEW: for Gmail validation
   const messagesEndRef = useRef(null);
   const chatbotRef = useRef(null);
 
@@ -33,6 +34,11 @@ const Chatbot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, loading]);
 
+  // Clear email error when step changes
+  useEffect(() => {
+    setEmailError('');
+  }, [step]);
+
   const addMessage = (text, sender, options = null) => {
     setMessages(prev => [...prev, { text, sender, options }]);
   };
@@ -51,8 +57,38 @@ const Chatbot = () => {
 
   const handleTextSubmit = () => {
     const value = textInput.trim();
-    if (!value && !currentStep.optional) return;
-    addMessage(value || '(skipped)', 'user');
+
+    // Allow skipping optional fields
+    if (!value && currentStep.optional) {
+      addMessage('(skipped)', 'user');
+      setAnswers({ ...answers, [currentStep.field]: value });
+      setTextInput('');
+      const nextStep = step + 1;
+      if (nextStep < flow.length) {
+        setStep(nextStep);
+        addMessage(flow[nextStep].question, 'bot', flow[nextStep].options);
+      } else {
+        submitEstimate();
+      }
+      return;
+    }
+
+    // Required field but empty – prevent submission (no feedback, but we keep it simple)
+    if (!value && !currentStep.optional) {
+      return;
+    }
+
+    // --- NEW: Gmail validation for email step ---
+    if (currentStep.type === 'email') {
+      if (!value.endsWith('@gmail.com')) {
+        setEmailError('Please enter a valid Gmail address (e.g., user@gmail.com)');
+        return;
+      }
+      setEmailError('');
+    }
+
+    // Proceed with valid input
+    addMessage(value, 'user');
     setAnswers({ ...answers, [currentStep.field]: value });
     setTextInput('');
     const nextStep = step + 1;
@@ -85,7 +121,6 @@ const Chatbot = () => {
     setPrice(null);
 
     const data = {
-   
       area: answers.area || '',
       propertyType: answers.propertyType || '',
       budget: answers.budget || '',
@@ -176,10 +211,11 @@ const Chatbot = () => {
     setErrorMsg('');
     setLoading(false);
     setTextInput('');
+    setEmailError('');
   };
 
   const getInputPlaceholder = () => {
-    if (currentStep.type === 'email') return 'Your email';
+    if (currentStep.type === 'email') return 'Your Gmail address'; // Updated placeholder
     if (currentStep.type === 'phone') return 'Phone (optional)';
     return `Your ${currentStep.field}`;
   };
@@ -311,23 +347,30 @@ const Chatbot = () => {
               {loading && <div className="text-center text-gray-500 text-sm">Submitting...</div>}
               {errorMsg && <div className="text-center text-red-500 text-sm">{errorMsg}</div>}
               {step >= 0 && step < flow.length && isTextStep && (
-                <div className="mt-2 flex gap-2">
-                  <input
-                    type={currentStep.type === 'email' ? 'email' : currentStep.type === 'phone' ? 'tel' : 'text'}
-                    placeholder={getInputPlaceholder()}
-                    value={textInput}
-                    onChange={(e) => setTextInput(e.target.value)}
-                    onKeyDown={(e) => { if (e.key === 'Enter') handleTextSubmit(); }}
-                    className="flex-1 border rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-teal-500 min-w-0"
-                    autoFocus
-                  />
-                  <button
-                    onClick={handleTextSubmit}
-                    className="bg-teal-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-teal-700 flex items-center justify-center touch-manipulation"
-                    aria-label="Send message"
-                  >
-                    <Send size={18} />
-                  </button>
+                <div className="mt-2">
+                  <div className="flex gap-2">
+                    <input
+                      type={currentStep.type === 'email' ? 'email' : currentStep.type === 'phone' ? 'tel' : 'text'}
+                      placeholder={getInputPlaceholder()}
+                      value={textInput}
+                      onChange={(e) => {
+                        setTextInput(e.target.value);
+                        if (emailError) setEmailError(''); // Clear error on typing
+                      }}
+                      onKeyDown={(e) => { if (e.key === 'Enter') handleTextSubmit(); }}
+                      className="flex-1 border rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-teal-500 min-w-0"
+                      autoFocus
+                    />
+                    <button
+                      onClick={handleTextSubmit}
+                      className="bg-teal-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-teal-700 flex items-center justify-center touch-manipulation"
+                      aria-label="Send message"
+                    >
+                      <Send size={18} />
+                    </button>
+                  </div>
+                  {/* Display Gmail validation error */}
+                  {emailError && <div className="text-red-500 text-xs mt-1">{emailError}</div>}
                 </div>
               )}
               <div ref={messagesEndRef} />

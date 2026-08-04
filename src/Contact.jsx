@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './css/Contact.css' 
-import Map from './Map'; 
+import './css/Contact.css';
+import Map from './Map';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,14 +19,28 @@ const Contact = () => {
     quote: false,
   });
 
+  const [emailError, setEmailError] = useState(''); // NEW: for Gmail validation
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
     setHasContent((prev) => ({ ...prev, [name]: value.trim() !== '' }));
+    // Clear email error when user types
+    if (name === 'email' && emailError) {
+      setEmailError('');
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // --- NEW: Gmail validation ---
+    const email = formData.email.trim();
+    if (!email.endsWith('@gmail.com')) {
+      setEmailError('Please enter a valid Gmail address (e.g., user@gmail.com)');
+      return;
+    }
+    setEmailError('');
 
     try {
       const response = await fetch(
@@ -63,7 +77,7 @@ const Contact = () => {
           {/* Map Area */}
           <div className="map-area">
             <div className="map-wrapper">
-              <Map /> {/* your Map component – ensure it renders an iframe or similar */}
+              <Map />
             </div>
 
             <div className="contact-info">
@@ -147,6 +161,13 @@ const Contact = () => {
                   <label htmlFor="phone">Phone Number</label>
                 </div>
               </div>
+
+              {/* Display email validation error */}
+              {emailError && (
+                <div className="form-row">
+                  <div className="error-message">{emailError}</div>
+                </div>
+              )}
 
               <div className="form-row">
                 <div className={`input-group textarea-group ${hasContent.quote ? 'has-content' : ''}`}>

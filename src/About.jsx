@@ -49,6 +49,16 @@ const About = () => {
               <p className="text-xl text-gray-100 leading-relaxed">
                 Our core values guide everything we do. Integrity ensures honest communication and trust, quality drives us to maintain high construction standards, and innovation allows us to adapt to modern design and building practices. Above all, client satisfaction remains our top priority, and we continuously strive to deliver results that meet and exceed expectations.
               </p>
+              
+
+            </div>
+                        <div className="bg-white/5 p-8 rounded-2xl backdrop-blur-md">
+  <h2 className="text-1xl mb-4 font-medium text-gray-900">Healthy And Safety Commitment</h2>
+              <p className="text-xl text-gray-100 leading-relaxed">
+                The health, safety, and wellbeing of our employees, clients, subcontractors, and the public are our highest priorities. We are committed to maintaining a safe working environment on every project by following all applicable health and safety regulations and industry best practices.
+              </p>
+              
+
             </div>
 
           </div>
