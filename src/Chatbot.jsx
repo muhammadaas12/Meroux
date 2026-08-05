@@ -13,7 +13,6 @@ const Chatbot = () => {
   const [price, setPrice] = useState(null);
   const [errorMsg, setErrorMsg] = useState('');
   const [textInput, setTextInput] = useState('');
-  const [emailError, setEmailError] = useState(''); // NEW: for Gmail validation
   const messagesEndRef = useRef(null);
   const chatbotRef = useRef(null);
 
@@ -33,11 +32,6 @@ const Chatbot = () => {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, loading]);
-
-  // Clear email error when step changes
-  useEffect(() => {
-    setEmailError('');
-  }, [step]);
 
   const addMessage = (text, sender, options = null) => {
     setMessages(prev => [...prev, { text, sender, options }]);
@@ -73,21 +67,12 @@ const Chatbot = () => {
       return;
     }
 
-    // Required field but empty – prevent submission (no feedback, but we keep it simple)
+    // Required field but empty – prevent submission
     if (!value && !currentStep.optional) {
       return;
     }
 
-    // --- NEW: Gmail validation for email step ---
-    if (currentStep.type === 'email') {
-      if (!value.endsWith('@gmail.com')) {
-        setEmailError('Please enter a valid Gmail address (e.g., user@gmail.com)');
-        return;
-      }
-      setEmailError('');
-    }
-
-    // Proceed with valid input
+    // Proceed with valid input (no Gmail restriction)
     addMessage(value, 'user');
     setAnswers({ ...answers, [currentStep.field]: value });
     setTextInput('');
@@ -211,11 +196,10 @@ const Chatbot = () => {
     setErrorMsg('');
     setLoading(false);
     setTextInput('');
-    setEmailError('');
   };
 
   const getInputPlaceholder = () => {
-    if (currentStep.type === 'email') return 'Your Gmail address'; // Updated placeholder
+    if (currentStep.type === 'email') return 'Your email address';
     if (currentStep.type === 'phone') return 'Phone (optional)';
     return `Your ${currentStep.field}`;
   };
@@ -353,10 +337,7 @@ const Chatbot = () => {
                       type={currentStep.type === 'email' ? 'email' : currentStep.type === 'phone' ? 'tel' : 'text'}
                       placeholder={getInputPlaceholder()}
                       value={textInput}
-                      onChange={(e) => {
-                        setTextInput(e.target.value);
-                        if (emailError) setEmailError(''); // Clear error on typing
-                      }}
+                      onChange={(e) => setTextInput(e.target.value)}
                       onKeyDown={(e) => { if (e.key === 'Enter') handleTextSubmit(); }}
                       className="flex-1 border rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-teal-500 min-w-0"
                       autoFocus
@@ -369,8 +350,6 @@ const Chatbot = () => {
                       <Send size={18} />
                     </button>
                   </div>
-                  {/* Display Gmail validation error */}
-                  {emailError && <div className="text-red-500 text-xs mt-1">{emailError}</div>}
                 </div>
               )}
               <div ref={messagesEndRef} />

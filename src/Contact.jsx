@@ -19,28 +19,18 @@ const Contact = () => {
     quote: false,
   });
 
-  const [emailError, setEmailError] = useState(''); // NEW: for Gmail validation
-
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData({ ...formData, [name]: value });
-    setHasContent((prev) => ({ ...prev, [name]: value.trim() !== '' }));
-    // Clear email error when user types
-    if (name === 'email' && emailError) {
-      setEmailError('');
-    }
+    setHasContent((prev) => ({
+      ...prev,
+      [name]: value.trim() !== '',
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // --- NEW: Gmail validation ---
-    const email = formData.email.trim();
-    if (!email.endsWith('@gmail.com')) {
-      setEmailError('Please enter a valid Gmail address (e.g., user@gmail.com)');
-      return;
-    }
-    setEmailError('');
 
     try {
       const response = await fetch(
@@ -61,7 +51,23 @@ const Contact = () => {
       }
 
       alert("Message sent successfully!");
-      window.location.reload();
+
+      setFormData({
+        name: '',
+        occupation: '',
+        email: '',
+        phone: '',
+        quote: '',
+      });
+
+      setHasContent({
+        name: false,
+        occupation: false,
+        email: false,
+        phone: false,
+        quote: false,
+      });
+
     } catch (error) {
       console.error(error);
       alert("Something went wrong!");
@@ -124,6 +130,7 @@ const Contact = () => {
                   />
                   <label htmlFor="name">Name</label>
                 </div>
+
                 <div className={`input-group ${hasContent.occupation ? 'has-content' : ''}`}>
                   <input
                     type="text"
@@ -149,6 +156,7 @@ const Contact = () => {
                   />
                   <label htmlFor="email">Email Address</label>
                 </div>
+
                 <div className={`input-group ${hasContent.phone ? 'has-content' : ''}`}>
                   <input
                     type="tel"
@@ -161,13 +169,6 @@ const Contact = () => {
                   <label htmlFor="phone">Phone Number</label>
                 </div>
               </div>
-
-              {/* Display email validation error */}
-              {emailError && (
-                <div className="form-row">
-                  <div className="error-message">{emailError}</div>
-                </div>
-              )}
 
               <div className="form-row">
                 <div className={`input-group textarea-group ${hasContent.quote ? 'has-content' : ''}`}>
@@ -184,7 +185,9 @@ const Contact = () => {
               </div>
 
               <div className="form-row">
-                <button type="submit" className="submit-btn">Send Message</button>
+                <button type="submit" className="submit-btn">
+                  Send Message
+                </button>
               </div>
             </form>
           </div>

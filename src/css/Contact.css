@@ -40,12 +40,12 @@
   padding: 2.5rem 2.5rem 2.8rem;
   transition: padding 0.3s ease;
 }
-/* ---------- Email column with error ---------- */
+
 .email-column {
   flex: 1;
   display: flex;
   flex-direction: column;
-  min-width: 110px;  /* matches .input-group min-width */
+  min-width: 110px;  
 }
 
 .email-error {
