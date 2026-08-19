@@ -1,0 +1,359 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --gold-dark: #B8860B;
+  --gold-main: #D4AF37;
+  --gold-light: #E6C76A;
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 10px;
+  background-image: url('../assets/image-engineering-objects-workplace-top-view-construction-concept-engineering-tools-vintage-tone-retro-filter-effect-soft-focus-selective-focus.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-size: 14px; /* base font smaller */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.quote-container {
+  margin: auto;
+  margin-top: 20px;
+  max-width: 900px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 40px 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.quote-container .quote-text {
+  text-align: center;
+  font-size: 30px; /* slightly smaller */
+  font-weight: 600;
+  margin-bottom: 20px;
+ background: linear-gradient(
+  90deg,
+  var(--gold-dark),
+  var(--gold-main),
+  var(--gold-light)
+);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.quote-container form {
+  padding-top: 20px;
+}
+
+/* ============================= */
+/* Form Rows */
+/* ============================= */
+.quote-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.quote-form-row .quote-input-data {
+  flex: 1 1 45%;
+  position: relative;
+}
+
+/* ============================= */
+/* Inputs, Selects, Textareas */
+/* ============================= */
+.quote-input-data input,
+.quote-input-data select,
+.quote-input-data textarea {
+  width: 100%;
+  border: none;
+  font-size: 14px; /* smaller font */
+  padding: 8px 5px 5px 5px;
+  background: transparent;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease;
+}
+
+.quote-input-data input:focus,
+.quote-input-data select:focus,
+.quote-input-data textarea:focus {
+  border-bottom-color: var(--gold-main);
+}
+
+.quote-input-data select {
+  cursor: pointer;
+  padding: 8px 5px 5px 5px;
+}
+
+.quote-input-data textarea {
+  resize: vertical;
+  min-height: 70px;
+  padding: 8px 5px 5px 5px;
+}
+
+/* ============================= */
+/* Floating Labels (if you use them) */
+/* ============================= */
+.quote-input-data label {
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+  font-size: 14px;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.quote-input-data input:focus ~ label,
+.quote-input-data input:valid ~ label,
+.quote-input-data textarea:focus ~ label,
+.quote-input-data textarea:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 12px;
+  color: #D4AF37;
+}
+
+/* ============================= */
+/* Underline Animation */
+/* ============================= */
+.quote-input-data .quote-underline {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+}
+
+.quote-input-data .quote-underline:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: 0.3s ease;
+}
+
+.quote-input-data input:focus ~ .quote-underline:before,
+.quote-input-data input:valid ~ .quote-underline:before,
+.quote-input-data select:focus ~ .quote-underline:before,
+.quote-input-data select:valid ~ .quote-underline:before,
+.quote-input-data textarea:focus ~ .quote-underline:before,
+.quote-input-data textarea:valid ~ .quote-underline:before {
+  transform: scaleX(1);
+}
+
+/* ============================= */
+/* Checkboxes (Area Selection) */
+/* ============================= */
+.quote-form-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 16px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 500;
+color: black;
+  cursor: pointer;
+}
+
+.quote-form-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color:#D4AF37;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Ensure area selection row wraps nicely */
+.quote-form-row:first-of-type label {
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .quote-form-row:first-of-type label {
+    white-space: normal;
+  }
+}
+
+/* ============================= */
+/* File Inputs */
+/* ============================= */
+.quote-input-data input[type="file"] {
+  border: 1px dashed #ccc;
+ background: linear-gradient(
+  90deg,
+  var(--gold-dark),
+  var(--gold-main),
+  var(--gold-light));
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.quote-input-data input[type="file"]:hover {
+ border: linear-gradient(
+  90deg,
+  var(--gold-dark),
+  var(--gold-main),
+  var(--gold-light));
+}
+
+/* Submit Button */
+/* ============================= */
+/* ============================= */
+/* Submit Button */
+/* ============================= */
+.quote-submit-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.quote-submit-btn .quote-input-data {
+  width: 300px;
+  text-align: center;
+}
+
+.quote-submit-btn .quote-input-data input {
+  width: 100%;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+ background: linear-gradient(
+  90deg,
+  var(--gold-dark),
+  var(--gold-main),
+  var(--gold-light)
+    );   /* force background */
+  color:white;         /* force text color */
+}
+
+.quote-submit-btn .quote-input-data input:disabled {
+   background: linear-gradient(
+  90deg,
+  var(--gold-dark),
+  var(--gold-main),
+  var(--gold-light)
+    ); ;
+  cursor: not-allowed;
+}
+.quote-description {
+  max-width: 750px;
+  margin: -8px auto 25px;
+  padding: 0 15px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #666;
+  font-weight: 400;
+}
+
+.quote-description strong {
+  color: var(--gold-main);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .quote-description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+}
+
+/* ============================= */
+/* AI Result Box */
+/* ============================= */
+.ai-response {
+  margin-top: 20px;
+  padding: 15px;
+ background: linear-gradient(
+  90deg,
+  var(--gold-dark),
+  var(--gold-main),
+  var(--gold-light)
+    );
+  border-left: 4px solid #D4AF37;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+h3 {
+  font-size: 18px; /* smaller */
+  color: black;
+  margin: 25px 0 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 5px;
+  font-weight: 600;
+}
+
+/* ============================= */
+/* Helper text (for file uploads) */
+/* ============================= */
+small {
+  display: block;
+  font-size: 11px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* ============================= */
+/* Responsive */
+/* ============================= */
+@media(max-width: 900px) {
+  .quote-container {
+    padding: 20px;
+  }
+  .quote-form-row {
+    display: block;
+  }
+  .quote-form-row .quote-input-data {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .quote-submit-btn .quote-input-data {
+    width: 100%;
+  }
+  /* make checkboxes wrap more naturally on small screens */
+  .quote-form-row:first-of-type {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .quote-form-row:first-of-type label {
+    margin-right: 12px;
+  }
+}
