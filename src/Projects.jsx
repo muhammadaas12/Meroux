@@ -17,66 +17,30 @@ import logoImg12 from "./assets/Br1.png";
 import logoImg13 from "./assets/Br2.png";
 import logoImg14 from "./assets/Br3.png";
 import logoImg15 from "./assets/Br4.png";
-import logoImg16 from "./assets/Hc1.png";
-import logoImg17 from "./assets/Hc2.png";
-import logoImg18 from "./assets/Hc3.png";
-import logoImg19 from "./assets/Hc4.png";
+import logoImg16 from "./assets/Finceley1.png";
+import logoImg17 from "./assets/Finceley2.png";
+import logoImg18 from "./assets/Finceley3.png";
+import logoImg19 from "./assets/Finceley4.png";
+import logoImg20 from "./assets/Finceley5.png";
+import logoImg21 from "./assets/Finceley6.png";
 
 const Projects = () => {
   const projectList = useMemo(
     () => [
+      
       {
         id: 1,
-        title: "Kitchen Remodelling",
-        category: "Kitchen",
-        badge: "Featured",
+        title: "315 Regents Park Rd, Greater, London N3 1DP",
+        category: "Office Renovation",
+        badge: "Work in Progress",
         rating: 4.9,
         desc:
-          "Modern design focusing on space, lighting, and premium materials. " +
-          "We carefully plan layout improvements, storage optimization, ventilation, and smart lighting. " +
-          "From cabinetry alignment to countertop finishing, every detail is selected to improve usability, comfort, and durability. " +
-          "This includes coordinated color tones, elegant fixtures, and a clean, long-lasting finish.",
-        images: [logoImg1, logoImg2, logoImg3, logoImg4, logoImg5, logoImg6],
-      },
-      {
-        id: 2,
-        title: "Bathroom Styling",
-        category: "Bathroom",
-        badge: "New",
-        rating: 4.7,
-        desc:
-          "Elegant finishes and cozy atmosphere with modern fixtures. " +
-          "We focus on moisture-safe materials, anti-slip flooring, improved drainage, and soft ambient lighting. " +
-          "The design balances comfort and style with premium fittings, careful tiling patterns, and space-saving solutions. " +
-          "Every element is chosen for easy maintenance and a refined look.",
-        images: [logoImg12, logoImg13, logoImg14, logoImg15],
-      },
-      {
-        id: 3,
-        title: "House Construction",
-        category: "Construction",
-        badge: "Popular",
-        rating: 4.8,
-        desc:
-          "Reliable structure with innovative architecture and planning. " +
-          "We ensure strong foundations, quality materials, and detailed engineering checks throughout the build. " +
-          "Our process includes site preparation, structural safety, efficient space planning, and clean finishing. " +
-          "The result is a durable home designed for comfort, practicality, and long-term value.",
-        images: [logoImg16, logoImg17, logoImg18, logoImg19],
-      },
-      {
-        id: 4,
-        title: "Interior Design",
-        category: "Construction",
-        badge: "Featured",
-        rating: 4.6,
-        desc:
-          "A clean, welcoming space with stylish furniture and tones. " +
-          "We plan lighting layers, seating flow, color balance, and focal points to create a relaxing atmosphere. " +
-          "Materials and textures are chosen to feel warm and premium, while keeping the layout functional. " +
-          "This creates a modern living area that feels open, calm, and elegant.",
-        images: [logoImg7, logoImg8, logoImg9, logoImg10, logoImg11],
-      },
+          "A modern office space with a focus on functionality and comfort. " +
+          "We design flexible layouts, incorporate smart technology, and use high-quality materials to create an inspiring work environment. " +
+          "The result is a productive and aesthetically pleasing space that supports collaboration and innovation.",
+        images: [logoImg16, logoImg17, logoImg18, logoImg19, logoImg20, logoImg21],
+
+      }
     ],
     []
   );
@@ -227,30 +191,88 @@ const Projects = () => {
   };
 
   // Keyboard controls
-  useEffect(() => {
-    const onKey = (e) => {
-      if (!selectedProject) return;
-      if (e.key === "Escape") {
-        if (lightboxOpen) closeLightbox();
-        else closeProject();
-      }
-      if (lightboxOpen) {
-        if (e.key === "ArrowRight") nextSlide();
-        if (e.key === "ArrowLeft") prevSlide();
-        if (e.key === "+" || e.key === "=") zoomIn();
-        if (e.key === "-") zoomOut();
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [selectedProject, lightboxOpen]);
+// Keyboard controls
+useEffect(() => {
+  const onKey = (e) => {
+    if (!selectedProject) return;
 
-  // Autoplay slides
-  useEffect(() => {
-    if (!selectedProject || lightboxOpen || !autoPlay) return;
-    const t = setInterval(() => nextSlide(), 2500);
-    return () => clearInterval(t);
-  }, [selectedProject, lightboxOpen, autoPlay]);
+    // Close with Escape
+    if (e.key === "Escape") {
+      e.preventDefault();
+
+      if (lightboxOpen) {
+        closeLightbox();
+      } else {
+        closeProject();
+      }
+      return;
+    }
+
+    // Image navigation
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+
+      if (lightboxOpen) {
+        setLightboxIndex(
+          (lightboxIndex + 1) % selectedProject.images.length
+        );
+        setSlideIndex(
+          (lightboxIndex + 1) % selectedProject.images.length
+        );
+      } else {
+        nextSlide();
+      }
+
+      return;
+    }
+
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+
+      if (lightboxOpen) {
+        const newIndex =
+          (lightboxIndex - 1 + selectedProject.images.length) %
+          selectedProject.images.length;
+
+        setLightboxIndex(newIndex);
+        setSlideIndex(newIndex);
+      } else {
+        prevSlide();
+      }
+
+      return;
+    }
+
+    // Zoom controls
+    if (lightboxOpen) {
+      if (e.key === "+" || e.key === "=") {
+        e.preventDefault();
+        zoomIn();
+      }
+
+      if (e.key === "-") {
+        e.preventDefault();
+        zoomOut();
+      }
+
+      if (e.key === "0") {
+        e.preventDefault();
+        resetZoom();
+      }
+    }
+  };
+
+  window.addEventListener("keydown", onKey);
+
+  return () => {
+    window.removeEventListener("keydown", onKey);
+  };
+}, [
+  selectedProject,
+  lightboxOpen,
+  lightboxIndex,
+  slideIndex,
+]);
 
   const Badge = ({ text }) => {
     const icon =

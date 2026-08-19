@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Search, X, Star, Sparkles, ArrowUpDown } from "lucide-react";
 
 const Testimonials = () => {
-  // Expanded testimonial data – now with 14 entries
+
   const testimonialsList = useMemo(
     () => [
       {
@@ -58,7 +58,7 @@ const Testimonials = () => {
         full:
           "I've recommended this team to several clients, and they never disappoint. For this living room project, they created a warm, inviting space with clever lighting and carefully chosen furniture. The attention to detail is evident in every corner. Clients are thrilled, and I'm confident in referring them for any interior work.",
       },
-      // --- New cards added below ---
+  
       {
         id: 5,
         name: "Jessica Lee",
@@ -193,8 +193,7 @@ const Testimonials = () => {
     []
   );
 
-  // Rest of the component remains exactly the same as before
-  // (categories, filtering, sorting, modal, etc.)
+
 
   const categories = useMemo(() => {
     const set = new Set(testimonialsList.map((t) => t.category));
@@ -228,7 +227,7 @@ const Testimonials = () => {
 
   const [selectedTestimonial, setSelectedTestimonial] = useState(null);
 
-  // Prevent body scroll when modal is open
+
   useEffect(() => {
     if (selectedTestimonial) {
       document.body.style.overflow = 'hidden';
@@ -274,7 +273,7 @@ const Testimonials = () => {
             </p>
           </div>
 
-          {/* Search + Sort */}
+
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto items-center">
             <div className="relative w-full sm:w-[320px] lg:w-[400px]">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={15} />
@@ -305,7 +304,7 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/* Category chips */}
+  
         <div className="flex flex-wrap gap-2 mb-7">
           {categories.map((c) => (
             <button
@@ -322,7 +321,7 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* Testimonial Cards */}
+
         <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filteredTestimonials.map((testimonial) => (
             <motion.div
@@ -339,7 +338,7 @@ const Testimonials = () => {
                     className="w-10 h-10 rounded-full object-cover flex-shrink-0"
                   />
                   <div className="min-w-0 flex-1">
-                    <h4 className="font-semibold text-gray-900 truncate">{testimonial.name}</h4>
+                    <h4 className="font-semibold text-xl text-gray-900 truncate">{testimonial.name}</h4>
                     <p className="text-xs text-gray-500 truncate">{testimonial.role}</p>
                   </div>
                   {testimonial.featured && (
@@ -365,7 +364,7 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* Empty state */}
+  
         {filteredTestimonials.length === 0 && (
           <div className="text-center py-12 text-gray-500">
             No testimonials match your filters.
@@ -373,7 +372,7 @@ const Testimonials = () => {
         )}
       </div>
 
-      {/* Testimonial Modal - Fixed for mobile scroll */}
+ 
       <AnimatePresence>
         {selectedTestimonial && (
           <motion.div
@@ -420,7 +419,7 @@ const Testimonials = () => {
                 <StarRating rating={selectedTestimonial.rating} />
               </div>
 
-              <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+              <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line">
                 {selectedTestimonial.full}
               </p>
 

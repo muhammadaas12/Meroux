@@ -572,7 +572,7 @@ const Services = () => {
                     onMouseLeave={() => setAutoPlay(true)}
                   />
 
-                  {/* Progress bar */}
+             
                   <div className="absolute top-0 left-0 right-0 h-1 bg-white/30">
                     <div
                       className="h-full bg-white"
@@ -661,7 +661,7 @@ const Services = () => {
             />
             
             <div className="relative w-full h-full flex items-center justify-center">
-              {/* Controls overlay - Top */}
+          
               <div className="absolute top-0 left-0 right-0 p-3 sm:p-4 flex justify-between items-start z-20">
                 <div className="flex gap-1 sm:gap-2 flex-wrap">
                   <button
@@ -730,7 +730,7 @@ const Services = () => {
                 </button>
               </div>
 
-              {/* Image with pan/zoom */}
+          
               <div
                 className="w-full h-full flex items-center justify-center select-none z-10 px-2 sm:px-4"
                 onPointerDown={onPointerDown}
