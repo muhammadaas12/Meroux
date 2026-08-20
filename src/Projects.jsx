@@ -23,6 +23,11 @@ import logoImg18 from "./assets/Finceley3.png";
 import logoImg19 from "./assets/Finceley4.png";
 import logoImg20 from "./assets/Finceley5.png";
 import logoImg21 from "./assets/Finceley6.png";
+import logoImg22 from "./assets/Finceley7.png";
+import logoImg23 from "./assets/Finceley8.png";
+import logoImg24 from "./assets/Finceley9.png";
+import logoImg25 from "./assets/Finceley10.png";
+import logoImg26 from "./assets/Finceley11.png";
 
 const Projects = () => {
   const projectList = useMemo(
@@ -38,7 +43,7 @@ const Projects = () => {
           "A modern office space with a focus on functionality and comfort. " +
           "We design flexible layouts, incorporate smart technology, and use high-quality materials to create an inspiring work environment. " +
           "The result is a productive and aesthetically pleasing space that supports collaboration and innovation.",
-        images: [logoImg16, logoImg17, logoImg18, logoImg19, logoImg20, logoImg21],
+        images: [logoImg16, logoImg17, logoImg18, logoImg19, logoImg20, logoImg21, logoImg22, logoImg23, logoImg24, logoImg25, logoImg26],
 
       }
     ],
