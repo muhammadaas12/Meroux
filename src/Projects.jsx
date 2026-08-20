@@ -1,33 +1,18 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X, Star, Sparkles, ArrowUpDown, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
-import logoImg from "./assets/NewLogo.png";
-import logoImg1 from "./assets/Kr1.png";
-import logoImg2 from "./assets/Kr2.png";
-import logoImg3 from "./assets/Kr3.png";
-import logoImg4 from "./assets/Kr4.png";
-import logoImg5 from "./assets/Kr5.png";
-import logoImg6 from "./assets/Kr6.png";
-import logoImg7 from "./assets/Lr1.png";
-import logoImg8 from "./assets/Lr2.png";
-import logoImg9 from "./assets/Lr3.png";
-import logoImg10 from "./assets/Lr4.png";
-import logoImg11 from "./assets/Lr5.png";
-import logoImg12 from "./assets/Br1.png";
-import logoImg13 from "./assets/Br2.png";
-import logoImg14 from "./assets/Br3.png";
-import logoImg15 from "./assets/Br4.png";
-import logoImg16 from "./assets/Finceley1.png";
-import logoImg17 from "./assets/Finceley2.png";
-import logoImg18 from "./assets/Finceley3.png";
-import logoImg19 from "./assets/Finceley4.png";
-import logoImg20 from "./assets/Finceley5.png";
-import logoImg21 from "./assets/Finceley6.png";
-import logoImg22 from "./assets/Finceley7.png";
-import logoImg23 from "./assets/Finceley8.png";
-import logoImg24 from "./assets/Finceley9.png";
-import logoImg25 from "./assets/Finceley10.png";
-import logoImg26 from "./assets/Finceley11.png";
+
+import logoImg1 from "./assets/Finceley1.png";
+import logoImg2 from "./assets/Finceley2.png";
+import logoImg3 from "./assets/Finceley3.png";
+import logoImg4 from "./assets/Finceley4.png";
+import logoImg5 from "./assets/Finceley5.png";
+import logoImg6 from "./assets/Finceley6.png";
+import logoImg7 from "./assets/Finceley7.png";
+import logoImg8 from "./assets/Finceley8.png";
+import logoImg9 from "./assets/Finceley9.png";
+import logoImg10 from "./assets/Finceley10.png";
+import logoImg11 from "./assets/Finceley11.png";
 
 const Projects = () => {
   const projectList = useMemo(
@@ -43,7 +28,7 @@ const Projects = () => {
           "A modern office space with a focus on functionality and comfort. " +
           "We design flexible layouts, incorporate smart technology, and use high-quality materials to create an inspiring work environment. " +
           "The result is a productive and aesthetically pleasing space that supports collaboration and innovation.",
-        images: [logoImg16, logoImg17, logoImg18, logoImg19, logoImg20, logoImg21, logoImg22, logoImg23, logoImg24, logoImg25, logoImg26],
+        images: [logoImg1, logoImg2, logoImg3, logoImg4, logoImg5, logoImg6, logoImg7, logoImg8, logoImg9, logoImg10, logoImg11],
 
       }
     ],
@@ -337,7 +322,7 @@ useEffect(() => {
               key={c}
               onClick={() => setActiveCat(c)}
               className={`px-3 py-1.5 rounded-full text-sm border transition ${
-                activeCat === c ? "bg-black text-white border-black" : "bg-white border-gray-200 hover:bg-gray-50"
+                activeCat === c ? "bg-yellow-600 text-white border-black" : "bg-white border-gray-200 hover:bg-gray-50"
               }`}
             >
               {c}

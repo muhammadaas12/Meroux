@@ -312,7 +312,7 @@ const Testimonials = () => {
               onClick={() => setActiveCat(c)}
               className={`px-3 py-1.5 rounded-full text-sm border transition ${
                 activeCat === c
-                  ? "bg-black text-white border-black"
+                  ? "bg-yellow-600 text-white border-black"
                   : "bg-white border-gray-200 hover:bg-gray-50"
               }`}
             >
