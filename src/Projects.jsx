@@ -22,6 +22,17 @@ import logoImg8 from "./assets/Finceley8.png";
 import logoImg9 from "./assets/Finceley9.png";
 import logoImg10 from "./assets/Finceley10.png";
 import logoImg11 from "./assets/Finceley11.png";
+import logoImg12 from "./assets/Finceley12.png";
+import logoImg13 from "./assets/Finceley13.png";
+import logoImg14 from "./assets/Finceley14.png";
+import logoImg15 from "./assets/Finceley15.png";
+import logoImg16 from "./assets/Finceley16.png";
+import logoImg17 from "./assets/Finceley17.png";
+import logoImg19 from "./assets/Finceley19.png";
+import logoImg20 from "./assets/Finceley20.png";
+import logoImg21 from "./assets/Finceley21.png";
+import logoImg22 from "./assets/Finceley22.png";
+
 
 const Projects = () => {
   const projectList = useMemo(
@@ -48,6 +59,17 @@ const Projects = () => {
           logoImg9,
           logoImg10,
           logoImg11,
+          logoImg12,
+          logoImg13,
+          logoImg14,
+          logoImg15,
+          logoImg16,
+          logoImg17,
+ 
+          logoImg19,
+          logoImg20,
+          logoImg21,
+          logoImg22,
         ],
       },
     ],
