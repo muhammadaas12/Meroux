@@ -32,6 +32,9 @@ import logoImg19 from "./assets/Finceley19.png";
 import logoImg20 from "./assets/Finceley20.png";
 import logoImg21 from "./assets/Finceley21.png";
 import logoImg22 from "./assets/Finceley22.png";
+import logoImg23 from "./assets/83Garden1.png";
+import logoImg24 from "./assets/83Garden2.png";
+import logoImg25 from "./assets/83Garden3.png";
 
 
 const Projects = () => {
@@ -72,6 +75,22 @@ const Projects = () => {
           logoImg22,
         ],
       },
+       {
+        id: 2,
+        title: "83 Garden Street, London",
+        category: "Residential",
+        badge: "Work in Progress",
+        rating: 4.8,
+        desc:
+          "A modern office space with a focus on functionality and comfort. " +
+          "We design flexible layouts, incorporate smart technology, and use high-quality materials to create an inspiring work environment. " +
+          "The result is a productive and aesthetically pleasing space that supports collaboration and innovation.",
+        images: [
+logoImg23,
+          logoImg24,
+          logoImg25
+        ],
+      }
     ],
     []
   );
