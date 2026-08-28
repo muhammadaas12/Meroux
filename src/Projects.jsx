@@ -77,7 +77,7 @@ const Projects = () => {
       },
        {
         id: 2,
-        title: "83 Garden Street, London",
+        title: "83 High St, Hampton Wick, Kingston upon Thames KT1 4DG",
         category: "Residential",
         badge: "Work in Progress",
         rating: 4.8,
