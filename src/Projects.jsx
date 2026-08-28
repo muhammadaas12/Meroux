@@ -82,13 +82,13 @@ const Projects = () => {
         badge: "Work in Progress",
         rating: 4.8,
         desc:
-          "A modern office space with a focus on functionality and comfort. " +
-          "We design flexible layouts, incorporate smart technology, and use high-quality materials to create an inspiring work environment. " +
-          "The result is a productive and aesthetically pleasing space that supports collaboration and innovation.",
+          "A contemporary residential project that combines style and comfort. " +
+          "We focus on creating open, light-filled spaces with modern finishes and thoughtful design details. " +
+          "The goal is to create a home that is both beautiful and functional, providing a welcoming environment for residents.",
         images: [
 logoImg23,
           logoImg24,
-          logoImg25
+          logoImg25                        
         ],
       }
     ],
