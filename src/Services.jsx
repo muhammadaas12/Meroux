@@ -1165,13 +1165,13 @@ const Services = () => {
 
                 <div className="p-4">
 
-                  <p className="text-[12px] text-gray-600 leading-5 line-clamp-3">
+                  <p className="text-[12px] text-gray-900 leading-5 line-clamp-3">
                     {service.short}
                   </p>
 
                   <div className="flex items-center justify-between mt-3">
 
-                    <span className="text-[12px] font-medium text-gray-700">
+                    <span className="text-[12px] font-medium text-gray-900">
                       Open gallery →
                     </span>
 
