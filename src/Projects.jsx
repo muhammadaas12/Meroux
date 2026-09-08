@@ -35,6 +35,16 @@ import logoImg22 from "./assets/Finceley22.png";
 import logoImg23 from "./assets/83Garden1.png";
 import logoImg24 from "./assets/83Garden2.png";
 import logoImg25 from "./assets/83Garden3.png";
+import logoImg26 from "./assets/Luton1.png";
+import logoImg27 from "./assets/Luton2.png";
+import logoImg28 from "./assets/Luton3.png";
+import logoImg29 from "./assets/Luton4.png";
+import logoImg30 from "./assets/Luton5.png";
+import logoImg31 from "./assets/Luton6.png";
+import logoImg32 from "./assets/Luton7.png";
+import logoImg33 from "./assets/Luton8.png";
+
+
 
 
 const Projects = () => {
@@ -90,7 +100,48 @@ logoImg23,
           logoImg24,
           logoImg25                        
         ],
-      }
+      },
+{
+  id: 2,
+  title: "1 King Street, Dunstable LU6 3SS",
+  category: "Residential",
+  badge: "Completed",
+  rating: 4.8,
+
+  desc:
+    "A comprehensive residential refurbishment in Dunstable, transforming the property into a modern, bright and highly functional home. " +
+    "The project included a full internal renovation, loft conversion works, new kitchen installation, contemporary bathrooms, flooring, bespoke storage, electrical upgrades, lighting, plumbing, decorating and detailed finishing throughout. " +
+    "The loft space was carefully designed to maximise usable floor area and natural light, incorporating multiple rooflights, built-in eaves storage and a modern en-suite bathroom. " +
+    "Clean finishes, neutral tones and contrasting black fixtures were used throughout to create a consistent contemporary appearance across the property.",
+
+  scope: [
+    "Full residential refurbishment",
+    "Loft conversion and internal finishing",
+    "Rooflight installation",
+    "Loft en-suite bathroom installation",
+    "Bathroom and shower room refurbishment",
+    "New fitted kitchen installation",
+    "Plumbing and heating works",
+    "Electrical installation and LED downlighting",
+    "Flooring and carpeting",
+    "Internal doors, skirting and joinery",
+    "Built-in eaves storage",
+    "Wall and ceiling preparation",
+    "Painting and decorating",
+    "Final finishing and snagging"
+  ],
+
+  images: [
+    logoImg26,
+    logoImg27,
+    logoImg28,
+    logoImg29,
+    logoImg30,
+    logoImg31,
+    logoImg32,
+    logoImg33
+  ],
+},
     ],
     []
   );
