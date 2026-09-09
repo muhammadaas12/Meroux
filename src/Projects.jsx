@@ -43,6 +43,7 @@ import logoImg30 from "./assets/Luton5.png";
 import logoImg31 from "./assets/Luton6.png";
 import logoImg32 from "./assets/Luton7.png";
 import logoImg33 from "./assets/Luton8.png";
+import logoImg34 from "./assets/Luton9.png";
 
 
 
@@ -139,7 +140,8 @@ logoImg23,
     logoImg30,
     logoImg31,
     logoImg32,
-    logoImg33
+    logoImg33,
+    logoImg34
   ],
 },
     ],
