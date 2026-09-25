@@ -415,9 +415,6 @@ logoImg23,
     });
   };
 
-  // =========================
-  // PINCH ZOOM
-  // =========================
 
   const getTouchDistance = (touches) => {
     if (touches.length < 2) return 0;
@@ -523,9 +520,7 @@ logoImg23,
     setSwipeStartX(null);
   };
 
-  // =========================
-  // KEYBOARD CONTROLS
-  // =========================
+
 
   useEffect(() => {
     const onKey = (e) => {
@@ -669,7 +664,7 @@ logoImg23,
               {query && (
                 <button
                   onClick={() => setQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black"
                   aria-label="Clear"
                 >
                   <X size={18} />
@@ -921,7 +916,7 @@ logoImg23,
                       e.stopPropagation();
                       prevSlide();
                     }}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/85 hover:bg-white text-gray-900 rounded-full w-10 h-10 grid place-items-center"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/85 hover:bg-white text-gray-900 rounded-full w-10 h-15 grid place-items-center"
                     aria-label="Previous"
                   >
                     ‹
@@ -933,7 +928,7 @@ logoImg23,
                       e.stopPropagation();
                       nextSlide();
                     }}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/85 hover:bg-white text-gray-900 rounded-full w-10 h-10 grid place-items-center"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/85 hover:bg-white text-gray-900 rounded-full w-10 h-15 grid place-items-center"
                     aria-label="Next"
                   >
                     ›
@@ -1082,7 +1077,7 @@ logoImg23,
                   {/* Close */}
                   <button
                     onClick={closeLightbox}
-                    className="bg-white/20 hover:bg-white/30 text-white rounded-full p-2 backdrop-blur-sm transition-all hover:scale-110 z-30"
+                    className="bg-white/20 hover:bg-white/30 text-white rounded-full p-4 backdrop-blur-sm transition-all hover:scale-110 z-10"
                     aria-label="Close"
                   >
                     <X size={20} />

@@ -10,7 +10,8 @@ export default function Navbar() {
     { name: "About Us", link: "/about" },
     { name: "Contact Us", link: "/contact" },
     { name: "Services", link: "/services" },
-    {name:'Testimonials', link:'/testimonials'}
+    {name:'Testimonials', link:'/testimonials'},
+  
   ];
 
   return (
@@ -50,6 +51,15 @@ export default function Navbar() {
           ))}
 
           <li>
+                <li >
+      <Link
+        to="/download"
+        onClick={() => setOpen(false)}
+        className="block w-full text-center px-4 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-[#FFFDD0] via-[#F8E7B9] to-[#E6C76A] rounded-lg text-[#3A2F1B] text-sm sm:text-base font-medium shadow-lg hover:opacity-90 transition"
+      >
+        Meroux App
+      </Link>
+    </li>
           <Link
   to="/quote"
   className="px-6 py-3 bg-gradient-to-r from-[#FFFDD0] via-[#F8E7B9] to-[#E6C76A] rounded-lg text-[#3A2F1B] text-base font-medium shadow-lg hover:opacity-90 transition"
@@ -57,6 +67,8 @@ export default function Navbar() {
   Instant Quote Generator
 </Link>
           </li>
+    
+    
 
         </ul>
       </div>
@@ -89,6 +101,20 @@ export default function Navbar() {
       >
         Instant Quote Generator
       </Link>
+      
+    </li>
+    <li>
+
+      <Link
+        to="/download"
+        onClick={() => setOpen(false)}
+        className="block w-full text-center px-4 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-[#FFFDD0] via-[#F8E7B9] to-[#E6C76A] rounded-lg text-[#3A2F1B] text-sm sm:text-base font-medium shadow-lg hover:opacity-90 transition"
+      >
+        Meroux App
+      </Link>
+
+
+
     </li>
 
   </ul>

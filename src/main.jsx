@@ -16,6 +16,7 @@ import ProjectDetails from './ProjectDetails.jsx';
 import PrivacyPolicy from './PrivacyPolicy.jsx';
 import Chatbot from './Chatbot';
 import Testimonials from './Testimonials.jsx'
+import DownloadPage from './Download.jsx';
 
 
 
@@ -35,6 +36,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/project/:id" element={<ProjectDetails />} />
           <Route path='testimonials' element ={<Testimonials />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/download" element={<DownloadPage />} />
         
 
         </Routes>

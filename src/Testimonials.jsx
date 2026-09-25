@@ -1,9 +1,14 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, X, Star, Sparkles, ArrowUpDown } from "lucide-react";
+import {
+  Search,
+  X,
+  Star,
+  Sparkles,
+  ArrowUpDown,
+} from "lucide-react";
 
 const Testimonials = () => {
-
   const testimonialsList = useMemo(
     () => [
       {
@@ -58,7 +63,6 @@ const Testimonials = () => {
         full:
           "I've recommended this team to several clients, and they never disappoint. For this living room project, they created a warm, inviting space with clever lighting and carefully chosen furniture. The attention to detail is evident in every corner. Clients are thrilled, and I'm confident in referring them for any interior work.",
       },
-  
       {
         id: 5,
         name: "Jessica Lee",
@@ -193,8 +197,6 @@ const Testimonials = () => {
     []
   );
 
-
-
   const categories = useMemo(() => {
     const set = new Set(testimonialsList.map((t) => t.category));
     return ["All", ...Array.from(set)];
@@ -203,44 +205,53 @@ const Testimonials = () => {
   const [query, setQuery] = useState("");
   const [activeCat, setActiveCat] = useState("All");
   const [sortBy, setSortBy] = useState("Featured");
+  const [selectedTestimonial, setSelectedTestimonial] = useState(null);
 
   const filteredTestimonials = useMemo(() => {
     let data = testimonialsList.filter((t) => {
       const q = query.trim().toLowerCase();
+
       const matchesQuery =
         !q ||
         t.name.toLowerCase().includes(q) ||
         t.short.toLowerCase().includes(q) ||
         t.full.toLowerCase().includes(q) ||
         t.category.toLowerCase().includes(q);
-      const matchesCat = activeCat === "All" || t.category === activeCat;
+
+      const matchesCat =
+        activeCat === "All" || t.category === activeCat;
+
       return matchesQuery && matchesCat;
     });
 
     if (sortBy === "Rating") {
       data = [...data].sort((a, b) => b.rating - a.rating);
-    } else if (sortBy === "Featured") {
-      data = [...data].sort((a, b) => (b.featured === a.featured ? 0 : b.featured ? 1 : -1));
     }
+
+    if (sortBy === "Featured") {
+      data = [...data].sort((a, b) =>
+        b.featured === a.featured ? 0 : b.featured ? 1 : -1
+      );
+    }
+
     return data;
   }, [testimonialsList, query, activeCat, sortBy]);
 
-  const [selectedTestimonial, setSelectedTestimonial] = useState(null);
-
-
   useEffect(() => {
-    if (selectedTestimonial) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = selectedTestimonial
+      ? "hidden"
+      : "auto";
+
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, [selectedTestimonial]);
 
-  const openModal = (testimonial) => setSelectedTestimonial(testimonial);
-  const closeModal = () => setSelectedTestimonial(null);
+  const openModal = (testimonial) =>
+    setSelectedTestimonial(testimonial);
+
+  const closeModal = () =>
+    setSelectedTestimonial(null);
 
   const StarRating = ({ rating }) => (
     <div className="flex items-center gap-0.5">
@@ -248,15 +259,24 @@ const Testimonials = () => {
         <Star
           key={star}
           size={14}
-          className={star <= rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}
+          className={
+            star <= rating
+              ? "fill-yellow-400 text-yellow-400"
+              : "text-gray-300"
+          }
         />
       ))}
     </div>
   );
 
   const Badge = ({ text }) => (
-    <span className="inline-flex items-center gap-1 text-[11px] px-2 py-1 rounded-full bg-black/80 text-white">
-      {text === "Featured" ? <Sparkles size={14} /> : <Star size={14} />}
+    <span className="h-7 min-w-[82px] inline-flex items-center justify-center gap-1 text-[11px] px-2 rounded-full bg-black/80 text-white">
+      {text === "Featured" ? (
+        <Sparkles size={14} />
+      ) : (
+        <Star size={14} />
+      )}
+
       {text}
     </span>
   );
@@ -264,25 +284,35 @@ const Testimonials = () => {
   return (
     <div className="min-h-screen py-14 px-6 text-gray-900 overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
+        {/* HEADER */}
+
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
           <div>
-            <h2 className="text-3xl font-bold">What Our Clients Say</h2>
+            <h2 className="text-3xl font-bold">
+              What Our Clients Say
+            </h2>
+
             <p className="text-sm text-gray-600 mt-1">
               Real feedback from homeowners, architects, and designers.
             </p>
           </div>
 
+          {/* SEARCH + SORT */}
 
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto items-center">
-            <div className="relative w-full sm:w-[320px] lg:w-[400px]">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={15} />
+            <div className="relative w-full sm:w-[310px] lg:w-[500px]">
+              <Search
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                size={15}
+              />
+
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search by name or keyword..."
-                className="w-full pl-10 pr-10 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-transparent text-sm bg-white"
+                className="w-full h-11 pl-10 pr-10 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-transparent text-sm bg-white"
               />
+
               {query && (
                 <button
                   onClick={() => setQuery("")}
@@ -295,67 +325,100 @@ const Testimonials = () => {
             </div>
 
             <button
-              onClick={() => setSortBy((s) => (s === "Featured" ? "Rating" : "Featured"))}
-              className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#FFFDD0] via-[#F8E7B9] to-[#E6C76A] text-black text-sm whitespace-nowrap"
+              onClick={() =>
+                setSortBy((s) =>
+                  s === "Featured"
+                    ? "Rating"
+                    : "Featured"
+                )
+              }
+              className="h-11 min-w-[145px] inline-flex items-center justify-center gap-2 px-5 rounded-xl bg-gradient-to-r from-[#FFFDD0] via-[#F8E7B9] to-[#E6C76A] text-black text-sm whitespace-nowrap"
             >
-              <ArrowUpDown size={16} />
+              <ArrowUpDown size={17} />
               Sort: {sortBy}
             </button>
           </div>
         </div>
 
-  
+        {/* CATEGORIES */}
+
         <div className="flex flex-wrap gap-2 mb-7">
-          {categories.map((c) => (
+          {categories.map((category) => (
             <button
-              key={c}
-              onClick={() => setActiveCat(c)}
-              className={`px-3 py-1.5 rounded-full text-sm border transition ${
-                activeCat === c
-                  ? "bg-yellow-600 text-white border-blackaw"
+              key={category}
+              onClick={() => setActiveCat(category)}
+              className={`h-9 w-[110px] rounded-full text-sm border transition inline-flex items-center justify-center ${
+                activeCat === category
+                  ? "bg-yellow-600 text-white border-black"
                   : "bg-white border-gray-200 hover:bg-gray-50"
               }`}
             >
-              {c}
+              {category}
             </button>
           ))}
         </div>
 
+        {/* CARDS */}
 
-        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-stretch auto-rows-fr">
           {filteredTestimonials.map((testimonial) => (
             <motion.div
               key={testimonial.id}
               whileHover={{ y: -4 }}
-              className="rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl cursor-pointer transition-all"
+              className="h-[330px] rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl cursor-pointer transition-all flex flex-col"
               onClick={() => openModal(testimonial)}
             >
-              <div className="p-5">
-                <div className="flex items-center gap-3 mb-3">
+              <div className="p-5 h-full flex flex-col">
+                {/* PERSON */}
+
+                <div className="flex items-center gap-3 mb-3 h-[52px]">
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
                     className="w-10 h-10 rounded-full object-cover flex-shrink-0"
                   />
+
                   <div className="min-w-0 flex-1">
-                    <h4 className="font-semibold text-xl text-gray-900 truncate">{testimonial.name}</h4>
-                    <p className="text-xs text-gray-500 truncate">{testimonial.role}</p>
+                    <h4 className="font-semibold text-xl text-gray-900 truncate">
+                      {testimonial.name}
+                    </h4>
+
+                    <p className="text-xs text-gray-500 truncate">
+                      {testimonial.role}
+                    </p>
                   </div>
-                  {testimonial.featured && (
-                    <div className="flex-shrink-0 ml-auto">
+
+                  <div className="w-[82px] flex justify-end">
+                    {testimonial.featured && (
                       <Badge text="Featured" />
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs text-gray-500">Rating</span>
-                  <StarRating rating={testimonial.rating} />
+
+                {/* RATING */}
+
+                <div className="flex items-center justify-between mb-2 h-[24px]">
+                  <span className="text-xs text-gray-500">
+                    Rating
+                  </span>
+
+                  <StarRating
+                    rating={testimonial.rating}
+                  />
                 </div>
-                <p className="text-sm text-gray-600 leading-5 line-clamp-3">
-                  "{testimonial.short}"
-                </p>
-                <div className="mt-3 text-xs font-medium text-gray-700">
-                  <span className="inline-block bg-gray-100 px-2 py-1 rounded-full">
+
+                {/* REVIEW */}
+
+                <div className="h-[82px] overflow-hidden">
+                  <p className="text-sm text-gray-600 leading-5 line-clamp-3">
+                    "{testimonial.short}"
+                  </p>
+                </div>
+
+                {/* CATEGORY */}
+
+                <div className="mt-auto">
+                  <span className="h-7 w-[110px] inline-flex items-center justify-center bg-gray-100 text-xs font-medium text-gray-700 rounded-full">
                     {testimonial.category}
                   </span>
                 </div>
@@ -364,7 +427,6 @@ const Testimonials = () => {
           ))}
         </div>
 
-  
         {filteredTestimonials.length === 0 && (
           <div className="text-center py-12 text-gray-500">
             No testimonials match your filters.
@@ -372,7 +434,8 @@ const Testimonials = () => {
         )}
       </div>
 
- 
+      {/* MODAL */}
+
       <AnimatePresence>
         {selectedTestimonial && (
           <motion.div
@@ -384,13 +447,24 @@ const Testimonials = () => {
           >
             <motion.div
               className="bg-white rounded-2xl max-w-2xl w-full p-6 relative my-4 max-h-[95vh] overflow-y-auto"
-              initial={{ scale: 0.96, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.96, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
+              initial={{
+                scale: 0.96,
+                opacity: 0,
+              }}
+              animate={{
+                scale: 1,
+                opacity: 1,
+              }}
+              exit={{
+                scale: 0.96,
+                opacity: 0,
+              }}
+              onClick={(e) =>
+                e.stopPropagation()
+              }
             >
               <button
-                className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10 bg-white rounded-full p-1 shadow-sm"
+                className="absolute top-4 right-4 w-9 h-9 text-gray-400 hover:text-gray-600 z-10 bg-white rounded-full shadow-sm flex items-center justify-center"
                 onClick={closeModal}
                 aria-label="Close"
               >
@@ -403,20 +477,31 @@ const Testimonials = () => {
                   alt={selectedTestimonial.name}
                   className="w-14 h-14 rounded-full object-cover flex-shrink-0"
                 />
+
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-xl font-bold truncate">{selectedTestimonial.name}</h3>
-                  <p className="text-sm text-gray-500">{selectedTestimonial.role}</p>
+                  <h3 className="text-xl font-bold truncate">
+                    {selectedTestimonial.name}
+                  </h3>
+
+                  <p className="text-sm text-gray-500">
+                    {selectedTestimonial.role}
+                  </p>
                 </div>
+
                 {selectedTestimonial.featured && (
-                  <div className="flex-shrink-0">
-                    <Badge text="Featured" />
-                  </div>
+                  <Badge text="Featured" />
                 )}
               </div>
 
               <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                <span className="text-sm font-medium">Project: {selectedTestimonial.category}</span>
-                <StarRating rating={selectedTestimonial.rating} />
+                <span className="text-sm font-medium">
+                  Project:{" "}
+                  {selectedTestimonial.category}
+                </span>
+
+                <StarRating
+                  rating={selectedTestimonial.rating}
+                />
               </div>
 
               <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line">
@@ -425,7 +510,7 @@ const Testimonials = () => {
 
               <button
                 onClick={closeModal}
-                className="mt-6 px-4 py-2 bg-black text-white rounded-lg hover:opacity-90 text-sm w-full sm:w-auto"
+                className="mt-6 h-10 min-w-[100px] px-4 bg-black text-white rounded-lg hover:opacity-90 text-sm"
               >
                 Close
               </button>

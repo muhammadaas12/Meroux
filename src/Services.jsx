@@ -1,5 +1,14 @@
-import React, { useState, useEffect, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+} from "react";
+
+import {
+  motion,
+  AnimatePresence,
+} from "framer-motion";
+
 import {
   Search,
   X,
@@ -10,6 +19,7 @@ import {
   ZoomOut,
   RotateCcw,
 } from "lucide-react";
+
 import { Link } from "react-router-dom";
 
 import logoImg1 from "./assets/Kr1.png";
@@ -92,8 +102,10 @@ const Services = () => {
         category: "Kitchen",
         badge: "Featured",
         rating: 4.9,
-        short: "Modern design focusing on space and lighting.",
-        full: "Complete kitchen renovation including cabinets, flooring, lighting, plumbing, and premium appliances installation.",
+        short:
+          "Modern design focusing on space and lighting.",
+        full:
+          "Complete kitchen renovation including cabinets, flooring, lighting, plumbing, and premium appliances installation.",
         features: [
           "Custom cabinets",
           "Quartz countertops",
@@ -116,8 +128,10 @@ const Services = () => {
         category: "Bathroom",
         badge: "New",
         rating: 4.8,
-        short: "Elegant finishes and modern fixtures.",
-        full: "Full bathroom remodeling with waterproofing, luxury fittings, tiles, lighting, and ventilation systems.",
+        short:
+          "Elegant finishes and modern fixtures.",
+        full:
+          "Full bathroom remodeling with waterproofing, luxury fittings, tiles, lighting, and ventilation systems.",
         features: [
           "Waterproofing",
           "Heated floors",
@@ -139,8 +153,10 @@ const Services = () => {
         category: "Construction",
         badge: "Popular",
         rating: 4.9,
-        short: "Reliable structure and planning.",
-        full: "End-to-end house construction including foundation, structure, roofing, electrical, plumbing, and finishing.",
+        short:
+          "Reliable structure and planning.",
+        full:
+          "End-to-end house construction including foundation, structure, roofing, electrical, plumbing, and finishing.",
         features: [
           "Structural engineering",
           "Energy-efficient design",
@@ -161,8 +177,10 @@ const Services = () => {
         category: "Construction",
         badge: "Featured",
         rating: 4.7,
-        short: "Clean and stylish living space.",
-        full: "Interior design including furniture setup, lighting, wall panels, flooring, and smart storage solutions.",
+        short:
+          "Clean and stylish living space.",
+        full:
+          "Interior design including furniture setup, lighting, wall panels, flooring, and smart storage solutions.",
         features: [
           "Custom furniture",
           "Accent walls",
@@ -184,8 +202,10 @@ const Services = () => {
         category: "Outdoor",
         badge: "New",
         rating: 4.8,
-        short: "Beautiful outdoor spaces.",
-        full: "Complete garden design including plants, lawns, patios, water features, and lighting.",
+        short:
+          "Beautiful outdoor spaces.",
+        full:
+          "Complete garden design including plants, lawns, patios, water features, and lighting.",
         features: [
           "Irrigation systems",
           "Decking & patios",
@@ -208,8 +228,10 @@ const Services = () => {
         category: "Office",
         badge: "",
         rating: 4.6,
-        short: "Functional and stylish workspaces.",
-        full: "Design and installation of ergonomic desks, storage, lighting, and tech setup for home offices.",
+        short:
+          "Functional and stylish workspaces.",
+        full:
+          "Design and installation of ergonomic desks, storage, lighting, and tech setup for home offices.",
         features: [
           "Ergonomic furniture",
           "Cable management",
@@ -232,8 +254,10 @@ const Services = () => {
         category: "Exterior",
         badge: "",
         rating: 4.7,
-        short: "Strong and durable roofing solutions.",
-        full: "Roof repair and replacement, insulation, waterproofing, and gutter installation.",
+        short:
+          "Strong and durable roofing solutions.",
+        full:
+          "Roof repair and replacement, insulation, waterproofing, and gutter installation.",
         features: [
           "Leak repairs",
           "New shingles",
@@ -255,8 +279,10 @@ const Services = () => {
         category: "Basement",
         badge: "Popular",
         rating: 4.8,
-        short: "Maximize your home's space.",
-        full: "Transform basements into living spaces, home gyms, or entertainment areas with full interior work.",
+        short:
+          "Maximize your home's space.",
+        full:
+          "Transform basements into living spaces, home gyms, or entertainment areas with full interior work.",
         features: [
           "Waterproofing",
           "Flooring",
@@ -277,8 +303,10 @@ const Services = () => {
         category: "Interior",
         badge: "",
         rating: 4.7,
-        short: "Fresh colours and flawless finishes.",
-        full: "Professional interior and exterior painting, wallpaper installation, decorative finishes, and colour consultation.",
+        short:
+          "Fresh colours and flawless finishes.",
+        full:
+          "Professional interior and exterior painting, wallpaper installation, decorative finishes, and colour consultation.",
         features: [
           "Wall painting",
           "Wallpaper installation",
@@ -299,8 +327,10 @@ const Services = () => {
         category: "Flooring",
         badge: "",
         rating: 4.8,
-        short: "Durable and stylish flooring options.",
-        full: "Expert installation of hardwood, laminate, tile, carpet, and luxury vinyl. Includes subfloor preparation and finishing.",
+        short:
+          "Durable and stylish flooring options.",
+        full:
+          "Expert installation of hardwood, laminate, tile, carpet, and luxury vinyl. Includes subfloor preparation and finishing.",
         features: [
           "Hardwood",
           "Laminate",
@@ -323,8 +353,10 @@ const Services = () => {
         category: "Electrical",
         badge: "",
         rating: 4.8,
-        short: "Safe, modern electrical solutions.",
-        full: "Complete electrical services including wiring upgrades, lighting fixture installation, smart home setup, and safety inspections.",
+        short:
+          "Safe, modern electrical solutions.",
+        full:
+          "Complete electrical services including wiring upgrades, lighting fixture installation, smart home setup, and safety inspections.",
         features: [
           "Wiring upgrades",
           "Lighting fixtures",
@@ -345,8 +377,10 @@ const Services = () => {
         category: "Plumbing",
         badge: "",
         rating: 4.7,
-        short: "Reliable plumbing for your home.",
-        full: "Pipe installation and repair, fixture replacement, water heater services, drain cleaning, and leak detection.",
+        short:
+          "Reliable plumbing for your home.",
+        full:
+          "Pipe installation and repair, fixture replacement, water heater services, drain cleaning, and leak detection.",
         features: [
           "Pipe installation",
           "Fixture replacement",
@@ -365,61 +399,35 @@ const Services = () => {
   );
 
   const categories = useMemo(() => {
-    const set = new Set(servicesData.map((s) => s.category));
-    return ["All", ...Array.from(set)];
+    const set = new Set(
+      servicesData.map((service) =>
+        service.category
+      )
+    );
+
+    return [
+      "All",
+      ...Array.from(set),
+    ];
   }, [servicesData]);
 
-  const [query, setQuery] = useState("");
-  const [activeCat, setActiveCat] = useState("All");
-  const [sortBy, setSortBy] = useState("Featured");
+  const [query, setQuery] =
+    useState("");
 
-  const filteredServices = useMemo(() => {
-    let data = servicesData.filter((s) => {
-      const q = query.trim().toLowerCase();
+  const [activeCat, setActiveCat] =
+    useState("All");
 
-      const matchesQuery =
-        !q ||
-        s.title.toLowerCase().includes(q) ||
-        s.full.toLowerCase().includes(q) ||
-        s.short.toLowerCase().includes(q) ||
-        s.category.toLowerCase().includes(q);
-
-      const matchesCat =
-        activeCat === "All" || s.category === activeCat;
-
-      return matchesQuery && matchesCat;
-    });
-
-    if (sortBy === "Rating") {
-      data = [...data].sort((a, b) => b.rating - a.rating);
-    }
-
-    if (sortBy === "New") {
-      data = [...data].sort(
-        (a, b) => (b.badge === "New") - (a.badge === "New")
-      );
-    }
-
-    if (sortBy === "Featured") {
-      data = [...data].sort(
-        (a, b) =>
-          (b.badge === "Featured") -
-          (a.badge === "Featured")
-      );
-    }
-
-    return data;
-  }, [servicesData, query, activeCat, sortBy]);
-
-  // =========================
-  // MODAL / LIGHTBOX
-  // =========================
+  const [sortBy, setSortBy] =
+    useState("Featured");
 
   const [selectedService, setSelectedService] =
     useState(null);
 
-  const [slideIndex, setSlideIndex] = useState(0);
-  const [autoPlay, setAutoPlay] = useState(true);
+  const [slideIndex, setSlideIndex] =
+    useState(0);
+
+  const [autoPlay, setAutoPlay] =
+    useState(true);
 
   const [lightboxOpen, setLightboxOpen] =
     useState(false);
@@ -427,11 +435,8 @@ const Services = () => {
   const [lightboxIndex, setLightboxIndex] =
     useState(0);
 
-  // =========================
-  // ZOOM
-  // =========================
-
-  const [zoomScale, setZoomScale] = useState(1);
+  const [zoomScale, setZoomScale] =
+    useState(1);
 
   const [pan, setPan] = useState({
     x: 0,
@@ -441,63 +446,134 @@ const Services = () => {
   const [isDragging, setIsDragging] =
     useState(false);
 
-  const [dragStart, setDragStart] = useState({
-    x: 0,
-    y: 0,
-  });
+  const [dragStart, setDragStart] =
+    useState({
+      x: 0,
+      y: 0,
+    });
 
-  const [startPan, setStartPan] = useState({
-    x: 0,
-    y: 0,
-  });
-
-  // =========================
-  // MOBILE TOUCH
-  // =========================
+  const [startPan, setStartPan] =
+    useState({
+      x: 0,
+      y: 0,
+    });
 
   const [swipeStartX, setSwipeStartX] =
     useState(null);
 
-  const [initialPinchDistance, setInitialPinchDistance] =
-    useState(null);
+  const [
+    initialPinchDistance,
+    setInitialPinchDistance,
+  ] = useState(null);
 
-  const [initialZoom, setInitialZoom] =
-    useState(1);
+  const [
+    initialZoom,
+    setInitialZoom,
+  ] = useState(1);
 
-  // =========================
-  // BODY SCROLL
-  // =========================
+  const filteredServices = useMemo(() => {
+    let data = servicesData.filter(
+      (service) => {
+        const q =
+          query.trim().toLowerCase();
+
+        const matchesQuery =
+          !q ||
+          service.title
+            .toLowerCase()
+            .includes(q) ||
+          service.full
+            .toLowerCase()
+            .includes(q) ||
+          service.short
+            .toLowerCase()
+            .includes(q) ||
+          service.category
+            .toLowerCase()
+            .includes(q);
+
+        const matchesCategory =
+          activeCat === "All" ||
+          service.category ===
+            activeCat;
+
+        return (
+          matchesQuery &&
+          matchesCategory
+        );
+      }
+    );
+
+    if (sortBy === "Rating") {
+      data = [...data].sort(
+        (a, b) =>
+          b.rating - a.rating
+      );
+    }
+
+    if (sortBy === "New") {
+      data = [...data].sort(
+        (a, b) =>
+          (b.badge === "New") -
+          (a.badge === "New")
+      );
+    }
+
+    if (sortBy === "Featured") {
+      data = [...data].sort(
+        (a, b) =>
+          (b.badge ===
+            "Featured") -
+          (a.badge ===
+            "Featured")
+      );
+    }
+
+    return data;
+  }, [
+    servicesData,
+    query,
+    activeCat,
+    sortBy,
+  ]);
+
+  /* BODY SCROLL */
 
   useEffect(() => {
-    if (selectedService || lightboxOpen) {
-      document.body.style.overflow = "hidden";
+    if (
+      selectedService ||
+      lightboxOpen
+    ) {
+      document.body.style.overflow =
+        "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow =
+        "auto";
     }
 
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow =
+        "auto";
     };
-  }, [selectedService, lightboxOpen]);
+  }, [
+    selectedService,
+    lightboxOpen,
+  ]);
 
-  // =========================
-  // OPEN SERVICE
-  // =========================
+  /* OPEN SERVICE */
 
   const openService = (service) => {
     setSelectedService(service);
     setSlideIndex(0);
+    setLightboxIndex(0);
     setAutoPlay(true);
   };
 
-  // =========================
-  // CLOSE SERVICE
-  // =========================
+  /* CLOSE SERVICE */
 
   const closeService = () => {
     setSelectedService(null);
     setLightboxOpen(false);
-
     setZoomScale(1);
 
     setPan({
@@ -506,14 +582,12 @@ const Services = () => {
     });
   };
 
-  // =========================
-  // OPEN LIGHTBOX
-  // =========================
+  /* OPEN LIGHTBOX */
 
   const openLightbox = (index) => {
+    setSlideIndex(index);
     setLightboxIndex(index);
     setLightboxOpen(true);
-
     setZoomScale(1);
 
     setPan({
@@ -522,12 +596,39 @@ const Services = () => {
     });
   };
 
-  // =========================
-  // CLOSE LIGHTBOX
-  // =========================
+  /* CLOSE LIGHTBOX */
 
   const closeLightbox = () => {
     setLightboxOpen(false);
+    setZoomScale(1);
+
+    setPan({
+      x: 0,
+      y: 0,
+    });
+  };
+
+  /* NEXT IMAGE */
+
+  const nextSlide = () => {
+    if (!selectedService) {
+      return;
+    }
+
+    const currentIndex =
+      lightboxOpen
+        ? lightboxIndex
+        : slideIndex;
+
+    const newIndex =
+      (currentIndex + 1) %
+      selectedService.images.length;
+
+    setSlideIndex(newIndex);
+
+    if (lightboxOpen) {
+      setLightboxIndex(newIndex);
+    }
 
     setZoomScale(1);
 
@@ -537,79 +638,62 @@ const Services = () => {
     });
   };
 
-  // =========================
-  // NEXT SLIDE
-  // =========================
-
-  const nextSlide = () => {
-    if (!selectedService) return;
-
-    const newIndex =
-      (slideIndex + 1) %
-      selectedService.images.length;
-
-    setSlideIndex(newIndex);
-
-    if (lightboxOpen) {
-      setLightboxIndex(newIndex);
-
-      // Reset zoom when image changes
-      setZoomScale(1);
-
-      setPan({
-        x: 0,
-        y: 0,
-      });
-    }
-  };
-
-  // =========================
-  // PREVIOUS SLIDE
-  // =========================
+  /* PREVIOUS IMAGE */
 
   const prevSlide = () => {
-    if (!selectedService) return;
+    if (!selectedService) {
+      return;
+    }
+
+    const currentIndex =
+      lightboxOpen
+        ? lightboxIndex
+        : slideIndex;
 
     const newIndex =
-      (slideIndex -
+      (
+        currentIndex -
         1 +
-        selectedService.images.length) %
+        selectedService.images.length
+      ) %
       selectedService.images.length;
 
     setSlideIndex(newIndex);
 
     if (lightboxOpen) {
       setLightboxIndex(newIndex);
-
-      // Reset zoom when image changes
-      setZoomScale(1);
-
-      setPan({
-        x: 0,
-        y: 0,
-      });
     }
+
+    setZoomScale(1);
+
+    setPan({
+      x: 0,
+      y: 0,
+    });
   };
 
-  // =========================
-  // ZOOM BUTTONS
-  // =========================
+  /* ZOOM */
 
   const zoomIn = () => {
-    setZoomScale((z) =>
+    setZoomScale((zoom) =>
       Math.min(
         4,
-        +(z + 0.25).toFixed(2)
+        +(
+          zoom + 0.25
+        ).toFixed(2)
       )
     );
   };
 
   const zoomOut = () => {
-    setZoomScale((z) => {
-      const newZoom = Math.max(
-        1,
-        +(z - 0.25).toFixed(2)
-      );
+    setZoomScale((zoom) => {
+      const newZoom =
+        Math.max(
+          1,
+          +(
+            zoom - 0.25
+          ).toFixed(2)
+        );
 
       if (newZoom === 1) {
         setPan({
@@ -631,16 +715,22 @@ const Services = () => {
     });
   };
 
-  // =========================
-  // POINTER PAN
-  // =========================
+  /* DESKTOP PAN */
 
   const onPointerDown = (e) => {
-    if (!lightboxOpen) return;
+    if (!lightboxOpen) {
+      return;
+    }
 
-    if (zoomScale <= 1) return;
+    if (zoomScale <= 1) {
+      return;
+    }
 
-    if (e.pointerType === "touch") return;
+    if (
+      e.pointerType === "touch"
+    ) {
+      return;
+    }
 
     setIsDragging(true);
 
@@ -653,19 +743,24 @@ const Services = () => {
       ...pan,
     });
 
-    e.currentTarget.setPointerCapture?.(
-      e.pointerId
-    );
+    e.currentTarget
+      .setPointerCapture?.(
+        e.pointerId
+      );
   };
 
   const onPointerMove = (e) => {
-    if (!isDragging) return;
+    if (!isDragging) {
+      return;
+    }
 
     const dx =
-      e.clientX - dragStart.x;
+      e.clientX -
+      dragStart.x;
 
     const dy =
-      e.clientY - dragStart.y;
+      e.clientY -
+      dragStart.y;
 
     setPan({
       x: startPan.x + dx,
@@ -677,12 +772,12 @@ const Services = () => {
     setIsDragging(false);
   };
 
-  // =========================
-  // WHEEL ZOOM
-  // =========================
+  /* MOUSE WHEEL ZOOM */
 
   const onWheel = (e) => {
-    if (!lightboxOpen) return;
+    if (!lightboxOpen) {
+      return;
+    }
 
     e.preventDefault();
 
@@ -691,23 +786,27 @@ const Services = () => {
         ? -0.15
         : 0.15;
 
-    setZoomScale((z) =>
+    setZoomScale((zoom) =>
       Math.max(
         1,
         Math.min(
           4,
-          +(z + delta).toFixed(2)
+          +(
+            zoom + delta
+          ).toFixed(2)
         )
       )
     );
   };
 
-  // =========================
-  // GET PINCH DISTANCE
-  // =========================
+  /* TOUCH */
 
-  const getTouchDistance = (touches) => {
-    if (touches.length < 2) {
+  const getTouchDistance = (
+    touches
+  ) => {
+    if (
+      touches.length < 2
+    ) {
       return 0;
     }
 
@@ -724,17 +823,16 @@ const Services = () => {
     );
   };
 
-  // =========================
-  // MOBILE TOUCH START
-  // =========================
-
   const onTouchStart = (e) => {
     e.stopPropagation();
 
-    // TWO FINGERS
-    if (e.touches.length === 2) {
+    if (
+      e.touches.length === 2
+    ) {
       const distance =
-        getTouchDistance(e.touches);
+        getTouchDistance(
+          e.touches
+        );
 
       setInitialPinchDistance(
         distance
@@ -744,22 +842,18 @@ const Services = () => {
         zoomScale
       );
 
-      // Important:
-      // two fingers should NEVER start slide swipe
       setSwipeStartX(null);
-
       setIsDragging(false);
 
       return;
     }
 
-    // ONE FINGER
-    if (e.touches.length === 1) {
+    if (
+      e.touches.length === 1
+    ) {
       const touch =
         e.touches[0];
 
-      // Already zoomed:
-      // one finger moves image
       if (zoomScale > 1) {
         setIsDragging(true);
 
@@ -775,24 +869,14 @@ const Services = () => {
         return;
       }
 
-      // Not zoomed:
-      // one finger starts slide swipe
       setSwipeStartX(
         touch.clientX
       );
     }
   };
 
-  // =========================
-  // MOBILE TOUCH MOVE
-  // =========================
-
   const onTouchMove = (e) => {
     e.stopPropagation();
-
-    // =========================
-    // TWO FINGER PINCH
-    // =========================
 
     if (
       e.touches.length === 2 &&
@@ -813,14 +897,15 @@ const Services = () => {
         currentDistance /
         initialPinchDistance;
 
-      const newZoom = Math.min(
-        4,
-        Math.max(
-          1,
-          initialZoom *
-            scaleChange
-        )
-      );
+      const newZoom =
+        Math.min(
+          4,
+          Math.max(
+            1,
+            initialZoom *
+              scaleChange
+          )
+        );
 
       setZoomScale(
         +newZoom.toFixed(2)
@@ -828,10 +913,6 @@ const Services = () => {
 
       return;
     }
-
-    // =========================
-    // ONE FINGER PAN
-    // =========================
 
     if (
       e.touches.length === 1 &&
@@ -858,34 +939,22 @@ const Services = () => {
     }
   };
 
-  // =========================
-  // MOBILE TOUCH END
-  // =========================
-
   const onTouchEnd = (e) => {
     e.stopPropagation();
 
-    // Finish pinch
-    if (e.touches.length < 2) {
+    if (
+      e.touches.length < 2
+    ) {
       setInitialPinchDistance(
         null
       );
     }
 
-    // IMPORTANT:
-    // If zoomed, NEVER change image
-    // through swipe.
     if (zoomScale > 1) {
       setIsDragging(false);
       setSwipeStartX(null);
-
       return;
     }
-
-    // =========================
-    // SLIDE SWIPE
-    // ONLY AT 1X
-    // =========================
 
     if (
       swipeStartX !== null &&
@@ -898,7 +967,9 @@ const Services = () => {
         touch.clientX -
         swipeStartX;
 
-      if (Math.abs(deltaX) > 50) {
+      if (
+        Math.abs(deltaX) > 50
+      ) {
         if (deltaX > 0) {
           prevSlide();
         } else {
@@ -911,15 +982,17 @@ const Services = () => {
     setIsDragging(false);
   };
 
-  // =========================
-  // KEYBOARD
-  // =========================
+  /* KEYBOARD */
 
   useEffect(() => {
     const onKey = (e) => {
-      if (!selectedService) return;
+      if (!selectedService) {
+        return;
+      }
 
-      if (e.key === "Escape") {
+      if (
+        e.key === "Escape"
+      ) {
         if (lightboxOpen) {
           closeLightbox();
         } else {
@@ -927,29 +1000,37 @@ const Services = () => {
         }
       }
 
-      if (lightboxOpen) {
-        if (e.key === "ArrowRight") {
-          nextSlide();
-        }
+      if (!lightboxOpen) {
+        return;
+      }
 
-        if (e.key === "ArrowLeft") {
-          prevSlide();
-        }
+      if (
+        e.key ===
+        "ArrowRight"
+      ) {
+        nextSlide();
+      }
 
-        if (
-          e.key === "+" ||
-          e.key === "="
-        ) {
-          zoomIn();
-        }
+      if (
+        e.key ===
+        "ArrowLeft"
+      ) {
+        prevSlide();
+      }
 
-        if (e.key === "-") {
-          zoomOut();
-        }
+      if (
+        e.key === "+" ||
+        e.key === "="
+      ) {
+        zoomIn();
+      }
 
-        if (e.key === "0") {
-          resetZoom();
-        }
+      if (e.key === "-") {
+        zoomOut();
+      }
+
+      if (e.key === "0") {
+        resetZoom();
       }
     };
 
@@ -967,12 +1048,11 @@ const Services = () => {
     selectedService,
     lightboxOpen,
     slideIndex,
+    lightboxIndex,
     zoomScale,
   ]);
 
-  // =========================
-  // AUTOPLAY
-  // =========================
+  /* AUTOPLAY */
 
   useEffect(() => {
     if (
@@ -997,33 +1077,27 @@ const Services = () => {
     slideIndex,
   ]);
 
-  // =========================
-  // BADGE
-  // =========================
-
   const Badge = ({ text }) => {
-    if (!text) return null;
+    if (!text) {
+      return (
+        <span className="h-7 w-[82px]" />
+      );
+    }
 
     const icon =
-      text === "Featured" ? (
-        <Star size={14} />
-      ) : text === "New" ? (
+      text === "New" ? (
         <Sparkles size={14} />
       ) : (
         <Star size={14} />
       );
 
     return (
-      <span className="inline-flex items-center gap-1 text-[11px] px-2 py-1 rounded-full bg-black/80 text-white">
+      <span className="h-7 w-[82px] inline-flex items-center justify-center gap-1 text-[11px] px-2 rounded-full bg-black/80 text-white">
         {icon}
         {text}
       </span>
     );
   };
-
-  // =========================
-  // RETURN
-  // =========================
 
   return (
     <div className="min-h-screen py-14 px-6 text-gray-900 overflow-x-hidden">
@@ -1032,7 +1106,6 @@ const Services = () => {
         {/* HEADER */}
 
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
-
           <div>
             <h2 className="text-3xl font-bold">
               Our Services
@@ -1046,9 +1119,7 @@ const Services = () => {
           {/* SEARCH + SORT */}
 
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto items-center">
-
-            <div className="relative w-full sm:w-[320px] lg:w-[400px]">
-
+            <div className="relative w-full sm:w-[310px] lg:w-[500px]">
               <Search
                 className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
                 size={15}
@@ -1057,10 +1128,12 @@ const Services = () => {
               <input
                 value={query}
                 onChange={(e) =>
-                  setQuery(e.target.value)
+                  setQuery(
+                    e.target.value
+                  )
                 }
                 placeholder="Search services..."
-                className="w-full pl-10 pr-10 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-transparent text-sm"
+                className="w-full h-11 pl-10 pr-10 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-transparent text-sm bg-white"
               />
 
               {query && (
@@ -1086,9 +1159,12 @@ const Services = () => {
                     : "Featured"
                 )
               }
-              className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#FFFDD0] via-[#F8E7B9] to-[#E6C76A] text-black text-sm whitespace-nowrap"
+              className="h-11 min-w-[145px] inline-flex items-center justify-center gap-2 px-5 rounded-xl bg-gradient-to-r from-[#FFFDD0] via-[#F8E7B9] to-[#E6C76A] text-black text-sm whitespace-nowrap"
             >
-              <ArrowUpDown size={16} />
+              <ArrowUpDown
+                size={17}
+              />
+
               Sort: {sortBy}
             </button>
           </div>
@@ -1097,110 +1173,137 @@ const Services = () => {
         {/* CATEGORIES */}
 
         <div className="flex flex-wrap gap-2 mb-7">
-          {categories.map((c) => (
-            <button
-              key={c}
-              onClick={() =>
-                setActiveCat(c)
-              }
-              className={`px-3 py-1.5 rounded-full text-sm border transition ${
-                activeCat === c
-                  ? "bg-yellow-600 text-white border-black"
-                  : "bg-white border-gray-200 hover:bg-gray-50"
-              }`}
-            >
-              {c}
-            </button>
-          ))}
+          {categories.map(
+            (category) => (
+              <button
+                key={category}
+                onClick={() =>
+                  setActiveCat(
+                    category
+                  )
+                }
+                className={`h-9 w-[110px] rounded-full text-sm border transition inline-flex items-center justify-center ${
+                  activeCat ===
+                  category
+                    ? "bg-yellow-600 text-white border-black"
+                    : "bg-white border-gray-200 hover:bg-gray-50"
+                }`}
+              >
+                {category}
+              </button>
+            )
+          )}
         </div>
 
         {/* CARDS */}
 
-        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-
+        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-stretch auto-rows-fr">
           {filteredServices.map(
             (service) => (
               <motion.div
                 key={service.id}
-                whileHover={{ y: -4 }}
-                className="rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl cursor-pointer transition-all"
+                whileHover={{
+                  y: -4,
+                }}
+                className="h-[330px] rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl cursor-pointer transition-all flex flex-col"
                 onClick={() =>
-                  openService(service)
+                  openService(
+                    service
+                  )
                 }
               >
+                {/* IMAGE */}
 
-                <div className="relative">
-
+                <div className="relative h-48 flex-shrink-0">
                   <img
-                    src={service.images[0]}
-                    alt={service.title}
-                    className="w-full h-48 object-cover"
+                    src={
+                      service
+                        .images[0]
+                    }
+                    alt={
+                      service.title
+                    }
+                    className="w-full h-full object-cover"
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
 
+                  {/* BADGE */}
+
                   <div className="absolute top-3 left-3">
                     <Badge
-                      text={service.badge}
+                      text={
+                        service.badge
+                      }
                     />
                   </div>
 
-                  <div className="absolute bottom-3 left-3 text-white">
+                  {/* CATEGORY / TITLE */}
 
-                    <div className="text-[12px] opacity-90">
-                      {service.category}
+                  <div className="absolute bottom-3 left-3 text-white pr-[75px]">
+                    <div className="text-[12px] opacity-90 h-[18px]">
+                      {
+                        service.category
+                      }
                     </div>
 
-                    <div className="text-[14px] font-semibold">
-                      {service.title}
+                    <div className="text-[14px] font-semibold h-[20px] truncate max-w-[170px]">
+                      {
+                        service.title
+                      }
                     </div>
-
                   </div>
 
-                  <div className="absolute bottom-3 right-3 bg-black/60 text-white text-[12px] px-2 py-1 rounded-full">
+                  {/* RATING */}
+
+                  <div className="absolute bottom-3 right-3 h-7 w-[58px] bg-black/60 text-white text-[12px] rounded-full flex items-center justify-center">
                     {service.rating} ★
                   </div>
-
                 </div>
 
-                <div className="p-4">
+                {/* CONTENT */}
 
-                  <p className="text-[12px] text-gray-900 leading-5 line-clamp-3">
-                    {service.short}
-                  </p>
-
-                  <div className="flex items-center justify-between mt-3">
-
-                    <span className="text-[12px] font-medium text-gray-900">
-                      Open gallery →
-                    </span>
-
+                <div className="p-4 flex-1 flex flex-col">
+                  <div className="h-[60px] overflow-hidden">
+                    <p className="text-[12px] text-gray-900 leading-5 line-clamp-3">
+                      {
+                        service.short
+                      }
+                    </p>
                   </div>
 
+                  <div className="mt-auto">
+                    <span className="h-8 w-[120px] inline-flex items-center justify-center text-[12px] font-medium text-gray-900 rounded-lg">
+                      Open gallery →
+                    </span>
+                  </div>
                 </div>
-
               </motion.div>
             )
           )}
-
         </div>
       </div>
 
-      {/* =========================================
-          SERVICE MODAL
-      ========================================= */}
+      {/* SERVICE MODAL */}
 
       <AnimatePresence>
         {selectedService && (
           <motion.div
             key="modal"
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 overflow-y-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={closeService}
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            exit={{
+              opacity: 0,
+            }}
+            onClick={
+              closeService
+            }
           >
-
             <motion.div
               className="bg-white rounded-2xl max-w-6xl w-full p-5 relative flex flex-col lg:flex-row gap-6 my-4 max-h-[98vh] overflow-y-auto"
               initial={{
@@ -1219,12 +1322,13 @@ const Services = () => {
                 e.stopPropagation()
               }
             >
-
               {/* CLOSE */}
 
               <button
                 className="absolute top-3 right-4 z-10 w-9 h-9 bg-white hover:bg-gray-100 rounded-full shadow-md flex items-center justify-center border border-gray-200"
-                onClick={closeService}
+                onClick={
+                  closeService
+                }
                 aria-label="Close"
               >
                 <X
@@ -1235,70 +1339,80 @@ const Services = () => {
 
               {/* DETAILS */}
 
-              <div className="flex-1 max-h-[440px] overflow-y-auto pr-2">
-
-                <div className="flex items-center gap-2 mb-2">
-
-                  <Badge
-                    text={
-                      selectedService.badge
-                    }
-                  />
+              <div className="flex-1 max-h-[540px] overflow-y-auto pr-2">
+                <div className="flex items-center gap-2 mb-2 h-7">
+                  {selectedService.badge ? (
+                    <Badge
+                      text={
+                        selectedService.badge
+                      }
+                    />
+                  ) : (
+                    <span className="h-7 w-[82px]" />
+                  )}
 
                   <span className="text-xs text-gray-500">
                     {
                       selectedService.category
                     }
                   </span>
-
                 </div>
 
                 <h3 className="text-xl font-bold mb-2">
-                  {selectedService.title}
+                  {
+                    selectedService.title
+                  }
                 </h3>
 
                 <p className="text-[12.5px] text-gray-700 leading-6">
-                  {selectedService.full}
+                  {
+                    selectedService.full
+                  }
                 </p>
 
                 {/* FEATURES */}
 
                 <div className="mt-4 bg-gray-50 rounded-xl p-4">
-
                   <h4 className="text-sm font-semibold text-gray-700 mb-2">
                     What's Included
                   </h4>
 
-                  <div className="grid grid-cols-2 gap-2">
-
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {selectedService.features.map(
-                      (feat, idx) => (
+                      (
+                        feature,
+                        index
+                      ) => (
                         <div
-                          key={idx}
-                          className="flex items-center gap-2 text-sm text-[var(--text-mid)]"
+                          key={
+                            index
+                          }
+                          className="h-9 flex items-center gap-2 text-sm text-[var(--text-mid)]"
                         >
-
                           <Sparkles
-                            size={14}
-                            className="text-[var(--gold-main)]"
+                            size={
+                              14
+                            }
+                            className="text-[var(--gold-main)] flex-shrink-0"
                           />
 
                           <span>
-                            {feat}
+                            {
+                              feature
+                            }
                           </span>
-
                         </div>
                       )
                     )}
-
                   </div>
                 </div>
 
-                <div className="mt-4 flex flex-wrap items-center gap-3">
+                {/* BUTTONS */}
 
+                <div className="mt-4 flex flex-wrap items-center gap-3">
                   <Link
                     to="/quote"
-                    className="px-4 py-2 bg-[var(--gold-main)] text-white rounded-lg hover:bg-[var(--gold-dark)] hover:shadow-lg transition-all duration-300 text-sm font-medium"
+                    className="h-10 w-[130px] bg-[var(--gold-main)] text-white rounded-lg hover:bg-[var(--gold-dark)] hover:shadow-lg transition-all duration-300 text-sm font-medium flex items-center justify-center"
                   >
                     Get Quote
                   </Link>
@@ -1306,10 +1420,11 @@ const Services = () => {
                   <button
                     onClick={() =>
                       setAutoPlay(
-                        (a) => !a
+                        (value) =>
+                          !value
                       )
                     }
-                    className="px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 text-sm"
+                    className="h-10 w-[150px] border border-gray-200 rounded-lg hover:bg-gray-50 text-sm flex items-center justify-center"
                   >
                     {autoPlay
                       ? "Pause slideshow"
@@ -1320,26 +1435,23 @@ const Services = () => {
                     onClick={
                       closeService
                     }
-                    className="px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 text-sm"
+                    className="h-10 w-[130px] border border-gray-200 rounded-lg hover:bg-gray-50 text-sm flex items-center justify-center"
                   >
                     Close
                   </button>
-
                 </div>
               </div>
 
               {/* GALLERY */}
 
-              <div className="w-full lg:w-[420px]">
-
+              <div className="w-full lg:w-[420px] flex-shrink-0">
                 <div className="relative rounded-xl overflow-hidden">
-
                   <img
                     src={
                       selectedService
                         .images[
-                          slideIndex
-                        ]
+                        slideIndex
+                      ]
                     }
                     alt={`${selectedService.title} slide ${
                       slideIndex + 1
@@ -1351,21 +1463,28 @@ const Services = () => {
                       )
                     }
                     onMouseEnter={() =>
-                      setAutoPlay(false)
+                      setAutoPlay(
+                        false
+                      )
                     }
                     onMouseLeave={() =>
-                      setAutoPlay(true)
+                      setAutoPlay(
+                        true
+                      )
                     }
                   />
 
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-white/30">
+                  {/* PROGRESS */}
 
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-white/30">
                     <div
                       className="h-full bg-white"
                       style={{
                         width: `${
-                          ((slideIndex +
-                            1) /
+                          ((
+                            slideIndex +
+                            1
+                          ) /
                             selectedService
                               .images
                               .length) *
@@ -1373,32 +1492,35 @@ const Services = () => {
                         }%`,
                       }}
                     />
-
                   </div>
+
+                  {/* PREVIOUS */}
 
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       prevSlide();
                     }}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/85 hover:bg-white text-gray-900 rounded-full w-10 h-10 grid place-items-center"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/85 hover:bg-white text-gray-900 rounded-full w-10 h-10 flex items-center justify-center text-xl"
                     aria-label="Previous"
                   >
                     ‹
                   </button>
+
+                  {/* NEXT */}
 
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       nextSlide();
                     }}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/85 hover:bg-white text-gray-900 rounded-full w-10 h-10 grid place-items-center"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/85 hover:bg-white text-gray-900 rounded-full w-10 h-10 flex items-center justify-center text-xl"
                     aria-label="Next"
                   >
                     ›
                   </button>
 
-                  <div className="absolute bottom-3 left-3 bg-black/60 text-white text-[12px] px-2 py-1 rounded">
+                  <div className="absolute bottom-3 left-3 h-8 px-3 bg-black/60 text-white text-[12px] rounded flex items-center justify-center">
                     Click to zoom •{" "}
                     {slideIndex + 1}/
                     {
@@ -1406,67 +1528,74 @@ const Services = () => {
                         .images.length
                     }
                   </div>
-
                 </div>
 
                 {/* THUMBNAILS */}
 
                 <div className="flex items-center justify-between mt-3 gap-3">
-
                   <div className="flex gap-2 overflow-x-auto pb-1">
-
                     {selectedService.images.map(
-                      (img, idx) => (
+                      (
+                        image,
+                        index
+                      ) => (
                         <button
-                          key={idx}
+                          key={
+                            index
+                          }
                           onClick={() =>
                             setSlideIndex(
-                              idx
+                              index
                             )
                           }
-                          className={`shrink-0 rounded-lg overflow-hidden border ${
-                            idx ===
+                          className={`w-16 h-12 shrink-0 rounded-lg overflow-hidden border ${
+                            index ===
                             slideIndex
                               ? "border-black"
                               : "border-transparent"
                           }`}
                         >
-
                           <img
-                            src={img}
+                            src={
+                              image
+                            }
                             alt=""
-                            className="w-16 h-12 object-cover"
+                            className="w-full h-full object-cover"
                           />
-
                         </button>
                       )
                     )}
-
                   </div>
 
                   <div className="flex gap-1.5">
-
                     {selectedService.images.map(
-                      (_, i) => (
+                      (
+                        _,
+                        index
+                      ) => (
                         <button
-                          key={i}
+                          key={
+                            index
+                          }
                           onClick={() =>
                             setSlideIndex(
-                              i
+                              index
                             )
                           }
                           className={`w-2.5 h-2.5 rounded-full ${
-                            i ===
+                            index ===
                             slideIndex
                               ? "bg-black"
                               : "bg-gray-300"
                           }`}
+                          aria-label={`Go to image ${
+                            index +
+                            1
+                          }`}
                         />
                       )
                     )}
-
                   </div>
-
                 </div>
               </div>
             </motion.div>
@@ -1474,15 +1603,11 @@ const Services = () => {
         )}
       </AnimatePresence>
 
-      {/* =========================================
-          MOBILE / DESKTOP LIGHTBOX
-      ========================================= */}
+      {/* FULL SCREEN LIGHTBOX */}
 
       <AnimatePresence>
-
         {lightboxOpen &&
           selectedService && (
-
             <motion.div
               className="fixed inset-0 z-[60] bg-black/95"
               initial={{
@@ -1494,9 +1619,10 @@ const Services = () => {
               exit={{
                 opacity: 0,
               }}
-              onWheel={onWheel}
+              onWheel={
+                onWheel
+              }
             >
-
               {/* BACKGROUND */}
 
               <div
@@ -1507,19 +1633,16 @@ const Services = () => {
               />
 
               <div className="relative w-full h-full flex items-center justify-center">
-
                 {/* TOP CONTROLS */}
 
                 <div className="absolute top-0 left-0 right-0 p-3 sm:p-4 flex justify-between items-start z-30">
-
-                  <div className="flex gap-1 sm:gap-2">
-
+                  <div className="flex gap-2">
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         zoomOut();
                       }}
-                      className="bg-white/20 hover:bg-white/30 text-white rounded-full p-2 backdrop-blur-sm"
+                      className="w-10 h-10 bg-white/20 hover:bg-white/30 text-white rounded-full backdrop-blur-sm flex items-center justify-center"
                       aria-label="Zoom out"
                     >
                       <ZoomOut
@@ -1532,7 +1655,7 @@ const Services = () => {
                         e.stopPropagation();
                         zoomIn();
                       }}
-                      className="bg-white/20 hover:bg-white/30 text-white rounded-full p-2 backdrop-blur-sm"
+                      className="w-10 h-10 bg-white/20 hover:bg-white/30 text-white rounded-full backdrop-blur-sm flex items-center justify-center"
                       aria-label="Zoom in"
                     >
                       <ZoomIn
@@ -1545,32 +1668,29 @@ const Services = () => {
                         e.stopPropagation();
                         resetZoom();
                       }}
-                      className="bg-white/20 hover:bg-white/30 text-white rounded-full p-2 backdrop-blur-sm"
+                      className="w-10 h-10 bg-white/20 hover:bg-white/30 text-white rounded-full backdrop-blur-sm flex items-center justify-center"
                       aria-label="Reset zoom"
                     >
                       <RotateCcw
                         size={20}
                       />
                     </button>
-
                   </div>
 
                   <button
                     onClick={
                       closeLightbox
                     }
-                    className="bg-white/20 hover:bg-white/30 text-white rounded-full p-2 backdrop-blur-sm"
+                    className="w-10 h-10 bg-white/20 hover:bg-white/30 text-white rounded-full backdrop-blur-sm flex items-center justify-center"
                     aria-label="Close"
                   >
                     <X size={20} />
                   </button>
-
                 </div>
 
                 {/* PREVIOUS */}
 
                 <div className="absolute inset-y-0 left-0 flex items-center z-20">
-
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
@@ -1582,7 +1702,7 @@ const Services = () => {
                         prevSlide();
                       }
                     }}
-                    className={`ml-2 sm:ml-4 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 sm:p-3 backdrop-blur-sm text-xl sm:text-2xl ${
+                    className={`ml-2 sm:ml-4 w-11 h-11 bg-white/20 hover:bg-white/30 text-white rounded-full backdrop-blur-sm text-2xl flex items-center justify-center ${
                       zoomScale > 1
                         ? "opacity-30"
                         : ""
@@ -1591,13 +1711,11 @@ const Services = () => {
                   >
                     ‹
                   </button>
-
                 </div>
 
                 {/* NEXT */}
 
                 <div className="absolute inset-y-0 right-0 flex items-center z-20">
-
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
@@ -1609,7 +1727,7 @@ const Services = () => {
                         nextSlide();
                       }
                     }}
-                    className={`mr-2 sm:mr-4 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 sm:p-3 backdrop-blur-sm text-xl sm:text-2xl ${
+                    className={`mr-2 sm:mr-4 w-11 h-11 bg-white/20 hover:bg-white/30 text-white rounded-full backdrop-blur-sm text-2xl flex items-center justify-center ${
                       zoomScale > 1
                         ? "opacity-30"
                         : ""
@@ -1618,10 +1736,9 @@ const Services = () => {
                   >
                     ›
                   </button>
-
                 </div>
 
-                {/* IMAGE TOUCH AREA */}
+                {/* IMAGE AREA */}
 
                 <div
                   className="w-full h-full flex items-center justify-center select-none z-10 px-2 sm:px-4"
@@ -1656,13 +1773,12 @@ const Services = () => {
                       "none",
                   }}
                 >
-
                   <img
                     src={
                       selectedService
                         .images[
-                          lightboxIndex
-                        ]
+                        lightboxIndex
+                      ]
                     }
                     alt={
                       selectedService.title
@@ -1678,9 +1794,11 @@ const Services = () => {
                           ? "none"
                           : "transform 0.1s ease-out",
 
-                      maxWidth: "95%",
+                      maxWidth:
+                        "95%",
 
-                      maxHeight: "90%",
+                      maxHeight:
+                        "90%",
 
                       objectFit:
                         "contain",
@@ -1700,15 +1818,15 @@ const Services = () => {
                     onClick={(e) =>
                       e.stopPropagation()
                     }
-                    draggable={false}
+                    draggable={
+                      false
+                    }
                   />
-
                 </div>
 
                 {/* INFO */}
 
                 <div className="absolute bottom-4 left-0 right-0 text-center text-white text-xs sm:text-sm z-20 pointer-events-none px-4">
-
                   {lightboxIndex +
                     1}{" "}
                   /{" "}
@@ -1721,31 +1839,30 @@ const Services = () => {
 
                   Zoom:{" "}
                   {Math.round(
-                    zoomScale * 100
+                    zoomScale *
+                      100
                   )}
                   %
 
                   {zoomScale >
                     1 && (
                     <span className="block mt-1 text-white/70">
-                      Pinch to zoom • Drag to move
+                      Pinch to zoom •
+                      Drag to move
                     </span>
                   )}
 
                   {zoomScale ===
                     1 && (
                     <span className="block mt-1 text-white/70">
-                      Swipe to change image
+                      Swipe to change
+                      image
                     </span>
                   )}
-
                 </div>
-
               </div>
-
             </motion.div>
           )}
-
       </AnimatePresence>
     </div>
   );
